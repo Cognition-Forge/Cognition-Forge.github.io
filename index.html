@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognition Forge - AI Governance & Agentic Systems</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="20+ years of software engineering leadership in AI governance, agentic AI systems, trading platforms, and cloud architecture. Professional portfolio and thought leadership.">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Cognition Forge - AI Governance & Agentic Systems">
+    <meta property="og:description" content="Professional expertise in AI governance, agentic AI, trading platforms, and cloud architecture.">
+    <meta property="og:image" content="https://www.cognition-forge.com/assets/images/og-image.jpg">
+    <meta property="og:url" content="https://www.cognition-forge.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cognition Forge - AI Governance & Agentic Systems">
+    <meta name="twitter:description" content="Professional expertise in AI governance, agentic AI, trading platforms, and cloud architecture.">
+    <meta name="twitter:image" content="https://www.cognition-forge.com/assets/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'bg-primary': '#0a0e27',
+                        'bg-secondary': '#1a1f3a',
+                        'accent-cyan': '#00d4ff',
+                        'accent-teal': '#00ffaa',
+                        'accent-purple': '#9b59b6',
+                        'accent-orange': '#ffa500',
+                        'text-primary': '#ffffff',
+                        'text-secondary': '#b0b8cc',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-bg-primary text-text-primary font-sans">
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent-cyan focus:text-bg-primary">
+        Skip to main content
+    </a>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 bg-bg-primary/90 backdrop-blur-md border-b border-bg-secondary transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center space-x-3">
+                    <img src="assets/images/logo.png" alt="Cognition Forge Logo" class="h-10 w-auto">
+                    <span class="text-xl font-bold text-accent-cyan">Cognition Forge</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#hero" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Home</a>
+                    <a href="#about" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">About</a>
+                    <a href="#expertise" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Expertise</a>
+                    <a href="#projects" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Projects</a>
+                    <a href="#insights" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Insights</a>
+                    <a href="#contact" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded-lg p-2" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#hero" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Home</a>
+                    <a href="#about" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">About</a>
+                    <a href="#expertise" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Expertise</a>
+                    <a href="#projects" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Projects</a>
+                    <a href="#insights" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Insights</a>
+                    <a href="#contact" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+            <!-- Background gradient effect -->
+            <div class="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary"></div>
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute top-20 left-20 w-72 h-72 bg-accent-cyan rounded-full blur-3xl"></div>
+                <div class="absolute bottom-20 right-20 w-96 h-96 bg-accent-purple rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <!-- Logo placeholder -->
+                <div class="mb-8">
+                    <img src="assets/images/logo.png" alt="Cognition Forge" class="h-32 w-auto mx-auto">
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan via-accent-teal to-accent-purple">
+                        Cognition Forge
+                    </span>
+                </h1>
+
+                <p class="text-xl sm:text-2xl md:text-3xl text-text-secondary mb-8">
+                    Pioneering AI Governance & Agentic Systems
+                </p>
+
+                <!-- Typing animation container -->
+                <div class="text-lg sm:text-xl text-accent-teal mb-12 h-8">
+                    <span id="typing-text"></span>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#projects" class="px-8 py-3 bg-accent-cyan text-bg-primary font-semibold rounded-lg hover:bg-accent-teal transition-colors duration-300 shadow-lg hover:shadow-accent-cyan/50">
+                        View Work
+                    </a>
+                    <a href="#contact" class="px-8 py-3 border-2 border-accent-cyan text-accent-cyan font-semibold rounded-lg hover:bg-accent-cyan hover:text-bg-primary transition-all duration-300">
+                        Contact
+                    </a>
+                    <a href="https://github.com" target="_blank" rel="noopener" class="px-8 py-3 border-2 border-accent-purple text-accent-purple font-semibold rounded-lg hover:bg-accent-purple hover:text-white transition-all duration-300 flex items-center gap-2">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-bg-secondary">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12" data-aos="fade-up">About Cognition Forge</h2>
+
+                <div class="max-w-5xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <!-- Brand Avatar/Logo -->
+                        <div class="flex justify-center" data-aos="fade-right">
+                            <img src="assets/images/avatar.png" alt="Cognition Forge Brand Mascot" loading="lazy" class="w-64 h-64 rounded-full border-4 border-accent-cyan shadow-2xl shadow-accent-cyan/30">
+                        </div>
+
+                        <!-- Professional Overview -->
+                        <div data-aos="fade-left">
+                            <h3 class="text-2xl font-semibold text-accent-cyan mb-6">20+ Years of Innovation Leadership</h3>
+                            <p class="text-text-secondary text-lg mb-6 leading-relaxed">
+                                Cognition Forge represents decades of expertise in architecting intelligent systems that bridge the gap between cutting-edge AI technology and real-world enterprise solutions.
+                            </p>
+                            <p class="text-text-secondary text-lg mb-6 leading-relaxed">
+                                Specializing in <span class="text-accent-teal font-semibold">AI governance frameworks</span>, <span class="text-accent-teal font-semibold">agentic AI systems</span>, and <span class="text-accent-teal font-semibold">workflow automation</span>, we pioneer approaches that transform how organizations leverage artificial intelligence in software development and operations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Core Competencies -->
+                    <div class="mt-16" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-2xl font-semibold text-center mb-8">Core Competencies</h3>
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="bg-bg-primary p-6 rounded-lg border border-accent-cyan/20 hover:border-accent-cyan transition-colors">
+                                <div class="text-accent-cyan text-3xl mb-3">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <h4 class="font-semibold text-lg mb-2">AI Governance</h4>
+                                <p class="text-text-secondary text-sm">Framework design for ethical AI deployment</p>
+                            </div>
+                            <div class="bg-bg-primary p-6 rounded-lg border border-accent-teal/20 hover:border-accent-teal transition-colors">
+                                <div class="text-accent-teal text-3xl mb-3">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h4 class="font-semibold text-lg mb-2">Agentic AI Systems</h4>
+                                <p class="text-text-secondary text-sm">Autonomous agents for complex workflows</p>
+                            </div>
+                            <div class="bg-bg-primary p-6 rounded-lg border border-accent-purple/20 hover:border-accent-purple transition-colors">
+                                <div class="text-accent-purple text-3xl mb-3">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h4 class="font-semibold text-lg mb-2">Trading Platforms</h4>
+                                <p class="text-text-secondary text-sm">High-performance financial systems</p>
+                            </div>
+                            <div class="bg-bg-primary p-6 rounded-lg border border-accent-orange/20 hover:border-accent-orange transition-colors">
+                                <div class="text-accent-orange text-3xl mb-3">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <h4 class="font-semibold text-lg mb-2">Cloud Architecture</h4>
+                                <p class="text-text-secondary text-sm">Scalable microservices infrastructure</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Research Interests -->
+                    <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-2xl font-semibold mb-6">Research & Innovation Focus</h3>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="px-4 py-2 bg-accent-cyan/10 border border-accent-cyan/30 rounded-full text-accent-cyan">AI-Driven Project Management</span>
+                            <span class="px-4 py-2 bg-accent-teal/10 border border-accent-teal/30 rounded-full text-accent-teal">Generative AI Applications</span>
+                            <span class="px-4 py-2 bg-accent-purple/10 border border-accent-purple/30 rounded-full text-accent-purple">Algorithmic Trading</span>
+                            <span class="px-4 py-2 bg-accent-orange/10 border border-accent-orange/30 rounded-full text-accent-orange">Real-time Messaging</span>
+                            <span class="px-4 py-2 bg-accent-cyan/10 border border-accent-cyan/30 rounded-full text-accent-cyan">Security Solutions</span>
+                            <span class="px-4 py-2 bg-accent-teal/10 border border-accent-teal/30 rounded-full text-accent-teal">Performance Optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Section -->
+        <section id="expertise" class="py-20 bg-bg-primary">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up">Expertise Domains</h2>
+                <p class="text-text-secondary text-center mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Deep technical expertise across AI, cloud infrastructure, financial technology, and enterprise security
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <!-- AI & Innovation Hub -->
+                    <div class="expertise-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-accent-cyan">AI & Innovation Hub</h3>
+                        <ul class="space-y-3 text-text-secondary">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
+                                <span>AI Governance frameworks for software engineering lifecycle</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
+                                <span>Agentic AI systems for workflow automation and orchestration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
+                                <span>AI-assisted trading strategies and market analysis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
+                                <span>Generative AI integration in development processes</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Cloud & Architecture -->
+                    <div class="expertise-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-accent-cyan">Cloud & Architecture</h3>
+                        <ul class="space-y-3 text-text-secondary">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
+                                <span>Microservices architecture design and implementation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
+                                <span>Large-scale distributed systems and messaging services</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
+                                <span>Cloud-native application development (AWS, Azure, GCP)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
+                                <span>Performance optimization for high-throughput systems</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Trading & FinTech -->
+                    <div class="expertise-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-accent-cyan">Trading & FinTech</h3>
+                        <ul class="space-y-3 text-text-secondary">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
+                                <span>Cloud-based e-trading platform architecture</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
+                                <span>Low-latency streaming for stock/futures/crypto quotes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
+                                <span>Algorithmic trading systems with AI integration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
+                                <span>Real-time market data processing and analytics</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Enterprise Solutions -->
+                    <div class="expertise-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-accent-cyan">Enterprise Solutions</h3>
+                        <ul class="space-y-3 text-text-secondary">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
+                                <span>Enterprise email and web security solutions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
+                                <span>Network security monitoring and threat detection</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
+                                <span>SQL/NoSQL database optimization and caching strategies</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
+                                <span>Agile methodologies (Kanban, Scrum) and team leadership</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-bg-secondary">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up">Projects & Portfolio</h2>
+                <p class="text-text-secondary text-center mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Selected projects showcasing practical implementations across AI, cloud, and trading domains
+                </p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!--
+                        PROJECT CARD TEMPLATE
+                        Copy this template to add more projects:
+                    -->
+
+                    <!-- Example Project 1 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center justify-between mb-4">
+                            <i class="fab fa-github text-accent-purple text-3xl"></i>
+                            <span class="text-xs text-text-secondary">Public Repository</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">AI Governance Framework</h3>
+                        <p class="text-text-secondary mb-4">
+                            Open-source framework for implementing AI governance in software development processes with automated compliance checks.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">FastAPI</span>
+                        </div>
+                        <a href="https://github.com/yourusername/project1" target="_blank" rel="noopener" class="inline-flex items-center text-accent-cyan hover:text-accent-teal transition-colors">
+                            View on GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+
+                    <!-- Example Project 2 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center justify-between mb-4">
+                            <i class="fab fa-github text-accent-purple text-3xl"></i>
+                            <span class="text-xs text-text-secondary">Public Repository</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Agentic Trading Bot</h3>
+                        <p class="text-text-secondary mb-4">
+                            Autonomous trading agent powered by LLMs for cryptocurrency markets with risk management and backtesting capabilities.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">OpenAI</span>
+                            <span class="tech-tag">WebSocket</span>
+                        </div>
+                        <a href="https://github.com/yourusername/project2" target="_blank" rel="noopener" class="inline-flex items-center text-accent-cyan hover:text-accent-teal transition-colors">
+                            View on GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+
+                    <!-- Example Project 3 -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center justify-between mb-4">
+                            <i class="fab fa-github text-accent-purple text-3xl"></i>
+                            <span class="text-xs text-text-secondary">Public Repository</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Microservices Orchestrator</h3>
+                        <p class="text-text-secondary mb-4">
+                            Cloud-native orchestration platform for managing distributed microservices with auto-scaling and health monitoring.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag">Go</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <a href="https://github.com/yourusername/project3" target="_blank" rel="noopener" class="inline-flex items-center text-accent-cyan hover:text-accent-teal transition-colors">
+                            View on GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+
+                    <!--
+                        TO ADD MORE PROJECTS:
+                        1. Copy one of the project cards above
+                        2. Update the title (h3 tag)
+                        3. Update the description (p tag)
+                        4. Update the tech tags (span.tech-tag)
+                        5. Update the GitHub link (a href)
+                        6. Adjust data-aos-delay if needed (100, 200, 300, 400, etc.)
+                    -->
+                </div>
+
+                <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+                    <a href="https://github.com" target="_blank" rel="noopener" class="inline-flex items-center px-8 py-3 border-2 border-accent-purple text-accent-purple font-semibold rounded-lg hover:bg-accent-purple hover:text-white transition-all duration-300">
+                        <i class="fab fa-github mr-2"></i>
+                        View All Projects on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insights Section -->
+        <section id="insights" class="py-20 bg-bg-primary">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Insights & Thought Leadership</h2>
+                <p class="text-center text-text-secondary">Coming soon...</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-bg-secondary">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up">Get in Touch</h2>
+                <p class="text-text-secondary text-center mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Interested in collaboration, consulting, or discussing innovative AI solutions? Let's connect!
+                </p>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-12 items-start">
+                        <!-- Contact Information -->
+                        <div data-aos="fade-right">
+                            <div class="flex justify-center mb-8">
+                                <img src="assets/images/logo.png" alt="Cognition Forge" loading="lazy" class="h-24 w-auto">
+                            </div>
+
+                            <h3 class="text-xl font-semibold mb-6 text-center">Contact Methods</h3>
+
+                            <!-- Contact Icons -->
+                            <div class="flex justify-center gap-6 mb-8">
+                                <a href="mailto:contact@cognition-forge.com"
+                                   class="contact-icon"
+                                   title="Email: contact@cognition-forge.com"
+                                   aria-label="Send email to Cognition Forge">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+
+                                <a href="https://github.com"
+                                   class="contact-icon"
+                                   title="GitHub"
+                                   aria-label="Visit Cognition Forge on GitHub"
+                                   target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i>
+                                </a>
+
+                                <a href="https://linkedin.com"
+                                   class="contact-icon"
+                                   title="LinkedIn"
+                                   aria-label="Connect on LinkedIn"
+                                   target="_blank" rel="noopener">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+
+                            <!-- Domain Reference -->
+                            <div class="text-center mb-6">
+                                <p class="text-text-secondary mb-2">Visit our website</p>
+                                <a href="https://www.cognition-forge.com" class="text-accent-cyan hover:text-accent-teal text-lg font-semibold transition-colors">
+                                    www.cognition-forge.com
+                                </a>
+                            </div>
+
+                            <!-- Additional Info -->
+                            <div class="bg-bg-primary p-6 rounded-lg border border-accent-cyan/20 mt-8">
+                                <h4 class="font-semibold mb-3 text-accent-cyan">Areas of Interest</h4>
+                                <ul class="text-text-secondary space-y-2 text-sm">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-circle text-accent-teal text-xs mt-1.5 mr-2"></i>
+                                        <span>AI Governance & Compliance Consulting</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-circle text-accent-teal text-xs mt-1.5 mr-2"></i>
+                                        <span>Agentic AI System Architecture</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-circle text-accent-teal text-xs mt-1.5 mr-2"></i>
+                                        <span>Trading Platform Development</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-circle text-accent-teal text-xs mt-1.5 mr-2"></i>
+                                        <span>Cloud Architecture & Scalability</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div data-aos="fade-left">
+                            <form id="contact-form" class="space-y-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                                    <input type="text"
+                                           id="name"
+                                           name="name"
+                                           required
+                                           class="form-input"
+                                           placeholder="Your name">
+                                </div>
+
+                                <div>
+                                    <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                                    <input type="email"
+                                           id="email"
+                                           name="email"
+                                           required
+                                           class="form-input"
+                                           placeholder="your.email@example.com">
+                                </div>
+
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+                                    <input type="text"
+                                           id="subject"
+                                           name="subject"
+                                           required
+                                           class="form-input"
+                                           placeholder="What would you like to discuss?">
+                                </div>
+
+                                <div>
+                                    <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                                    <textarea id="message"
+                                              name="message"
+                                              required
+                                              rows="5"
+                                              class="form-input resize-none"
+                                              placeholder="Tell us about your project or inquiry..."></textarea>
+                                </div>
+
+                                <button type="submit"
+                                        class="w-full px-8 py-3 bg-accent-cyan text-bg-primary font-semibold rounded-lg hover:bg-accent-teal transition-colors duration-300 shadow-lg hover:shadow-accent-cyan/50">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-bg-primary border-t border-bg-secondary py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <img src="assets/images/logo.png" alt="Cognition Forge" class="h-8 w-auto">
+                    <span class="text-lg font-semibold text-accent-cyan">Cognition Forge</span>
+                </div>
+
+                <div class="text-text-secondary text-sm">
+                    <p>&copy; 2024 Cognition Forge. All rights reserved.</p>
+                    <p class="mt-1">www.cognition-forge.com</p>
+                </div>
+
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#hero" class="text-text-secondary hover:text-accent-cyan transition-colors">Home</a>
+                    <a href="#about" class="text-text-secondary hover:text-accent-cyan transition-colors">About</a>
+                    <a href="#expertise" class="text-text-secondary hover:text-accent-cyan transition-colors">Expertise</a>
+                    <a href="#contact" class="text-text-secondary hover:text-accent-cyan transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/typing.js"></script>
+</body>
+</html>
