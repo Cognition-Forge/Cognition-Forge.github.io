@@ -36,8 +36,8 @@ npx http-server -p 8000
 
 **Update Your Links:**
 - Open `index.html`
-- Search for `https://github.com` and replace with your GitHub profile
 - Search for `https://linkedin.com` and replace with your LinkedIn profile
+- GitHub links already point to: https://github.com/Cognition-Forge
 
 **Add Your Projects:**
 - In `index.html`, find the Projects section (`id="projects"`)
