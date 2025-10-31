@@ -37,10 +37,37 @@ function initNavigation() {
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-
             // Get target section
             const targetId = this.getAttribute('href');
+
+            // Handle root path (/) - scroll to top
+            if (targetId === '/') {
+                e.preventDefault();
+
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    updateMenuIcon(false);
+                }
+
+                // Scroll to top
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+
+                // Update URL without hash
+                history.pushState(null, null, '/');
+                return;
+            }
+
+            // If it's not a hash link, allow default navigation
+            if (!targetId.startsWith('#')) {
+                return;
+            }
+
+            e.preventDefault();
             const targetSection = document.querySelector(targetId);
 
             if (targetSection) {
