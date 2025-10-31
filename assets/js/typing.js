@@ -103,9 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Strings to type
         const strings = [
             'AI Governance for Software Engineering',
+            'AI-assisted Software Development Process',
             'Agentic AI Systems & Automation',
-            'High-Performance Trading Platforms',
             'Cloud Architecture & Microservices',
+            'High-Performance Trading Platforms',
             'Enterprise Security Solutions'
         ];
 
