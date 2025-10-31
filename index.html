@@ -74,14 +74,14 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
-                <a href="#hero" class="flex items-center space-x-3">
+                <a href="/" class="flex items-center space-x-3">
                     <img src="assets/images/logo.png" alt="Cognition Forge Logo" class="h-10 w-auto">
                     <span class="text-xl font-bold text-accent-cyan">Cognition Forge</span>
                 </a>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-8">
-                    <a href="#hero" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Home</a>
+                    <a href="/" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Home</a>
                     <a href="#about" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">About</a>
                     <a href="#expertise" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Expertise</a>
                     <a href="#projects" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Projects</a>
@@ -98,7 +98,7 @@
             <!-- Mobile Navigation -->
             <div id="mobile-menu" class="md:hidden">
                 <div class="flex flex-col space-y-4">
-                    <a href="#hero" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Home</a>
+                    <a href="/" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Home</a>
                     <a href="#about" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">About</a>
                     <a href="#expertise" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Expertise</a>
                     <a href="#projects" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Projects</a>
@@ -113,13 +113,8 @@
     <main id="main-content">
         <!-- Hero Section -->
         <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
-            <!-- Background gradient effect -->
-            <div class="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary"></div>
-            <div class="absolute inset-0 opacity-20">
-                <div class="absolute top-20 left-20 w-72 h-72 bg-accent-cyan rounded-full blur-3xl"></div>
-                <div class="absolute bottom-20 right-20 w-96 h-96 bg-accent-purple rounded-full blur-3xl"></div>
-            </div>
-
+            <div class="absolute inset-0 bg-bg-primary/80 z-0"></div> <!-- Overlay for readability -->
+            
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                 <!-- Logo placeholder -->
 <!--
@@ -230,6 +225,7 @@
                         <h3 class="text-2xl font-semibold mb-6">Research & Innovation Focus</h3>
                         <div class="flex flex-wrap justify-center gap-3">
                             <span class="px-4 py-2 bg-accent-cyan/10 border border-accent-cyan/30 rounded-full text-accent-cyan">AI-assisted Software Development Process</span>
+                            <span class="px-4 py-2 bg-accent-teal/10 border border-accent-cyan/30 rounded-full text-accent-cyan">Agentic Context Engineering</span>
                             <span class="px-4 py-2 bg-accent-teal/10 border border-accent-cyan/30 rounded-full text-accent-cyan">Agentic Workflows</span>
                             <span class="px-4 py-2 bg-accent-teal/10 border border-accent-cyan/30 rounded-full text-accent-cyan">Generative AI Applications</span>
                             <span class="px-4 py-2 bg-accent-teal/10 border border-accent-teal/30 rounded-full text-accent-teal">Software Engineering</span>
@@ -270,15 +266,15 @@
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>Generative AI integration in development processes</span>
+                                <span>Agentic workflow automation and orchestration</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>Agentic AI systems for workflow automation and orchestration</span>
+                                <span>Research on Context Engineering and Context Collapse</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>AI-assisted trading strategies and market analysis</span>
+                                <span>AI-assisted Infrastructure Captial Project</span>
                             </li>
                         </ul>
                     </div>
@@ -364,8 +360,53 @@
             </div>
         </section>
 
+        <!-- AgentGo Section -->
+        <section id="agentgo" class="py-20 bg-bg-secondary">
+            <div class="absolute inset-0 bg-bg-primary/90 z-0"></div> <!-- Overlay for readability -->
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12" data-aos="fade-up">AgentGo Platform</h2>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                    <!-- Left: Content -->
+                    <div data-aos="fade-right">
+                        <h3 class="text-2xl font-semibold mb-6 text-accent-cyan">High-Performance Agent Orchestration (Go)</h3>
+                        <ul class="space-y-4 text-text-secondary">
+                            <li class="flex items-start">
+                                <i class="fas fa-microchip text-accent-teal mt-1 mr-3"></i>
+                                <span><strong class="text-text-primary">Core Architecture:</strong> Designed a concurrent, type-safe platform replacing heavy Python runtimes with a native Worker Pool Scheduler for high-throughput, non-blocking agent execution.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-cogs text-accent-teal mt-1 mr-3"></i>
+                                <span><strong class="text-text-primary">Modular Engines:</strong> Built unified Agent and Workflow Engines to orchestrate complex, multi-step tasks including background monitoring, parallel execution, and approval workflows.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-server text-accent-teal mt-1 mr-3"></i>
+                                <span><strong class="text-text-primary">Infrastructure:</strong> Engineered ultra-lightweight containers with Hot-Reloadable Configurations, allowing dynamic updates without downtime.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-network-wired text-accent-teal mt-1 mr-3"></i>
+                                <span><strong class="text-text-primary">Interface Layer:</strong> Implemented robust HTTP and CLI interfaces integrating a stateful Chat Service with an extensible Tool Registry.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chart-bar text-accent-teal mt-1 mr-3"></i>
+                                <span><strong class="text-text-primary">Production Ops:</strong> Delivered full-stack observability with structured logging, custom Prometheus Metrics, and pre-provisioned Grafana Dashboards.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Right: Image -->
+                    <div data-aos="fade-left">
+                         <div class="relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-accent-cyan to-accent-teal rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                            <img src="assets/images/agentgo-arch2.png" alt="AgentGo Architecture" class="relative rounded-lg shadow-2xl border border-accent-cyan/20 w-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Projects Section -->
-        <section id="projects" class="py-20 bg-bg-secondary">
+        <section id="projects" class="py-20 bg-bg-primary">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up">Projects & Portfolio</h2>
                 <p class="text-text-secondary text-center mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
@@ -387,6 +428,10 @@
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">LangChain</span>
                             <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">Anthropic API</span>
+                            <span class="tech-tag">Google API</span>
+                            <span class="tech-tag">PostgreSQL</span>
                         </div>
                         <a href="https://github.com/Cognition-Forge/emergency-response-system" target="_blank" rel="noopener" class="inline-flex items-center text-accent-cyan hover:text-accent-teal transition-colors">
                             View on GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
@@ -405,6 +450,7 @@
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">NautilusTrader</span>
+                            <span class="tech-tag">Yahoo Finance</span>
                         </div>
                         <a href="https://github.com/Cognition-Forge/test-nautilus" target="_blank" rel="noopener" class="inline-flex items-center text-accent-cyan hover:text-accent-teal transition-colors">
                             View on GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
@@ -428,6 +474,7 @@
                             <span class="tech-tag">LLM</span>
                             <span class="tech-tag">Ollama</span>
                             <span class="tech-tag">LiteLLM</span>
+                            <span class="tech-tag">LangFuse</span>
                             <span class="tech-tag">Redis</span>
                             <span class="tech-tag">PostgreSQL/PGVector</span>
                         </div>
@@ -464,6 +511,10 @@
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="tech-tag">AI Coding Agents</span>
                             <span class="tech-tag">Spec-Driven Development</span>
+                            <span class="tech-tag">Context Engineering</span>
+                            <span class="tech-tag">Context Reduction</span>
+                            <span class="tech-tag">Context Isolation</span>
+                            <span class="tech-tag">Context Offloading</span>
                         </div>
                         <a target="_blank" rel="noopener" class="inline-flex items-center text-accent-cyan hover:text-accent-teal transition-colors">
                             View on GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
@@ -486,6 +537,9 @@
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">NautilusTrader</span>
+                            <span class="tech-tag">Yahoo Finance</span>
+                            <span class="tech-tag">FinMind</span>
                         </div>
                         <a target="_blank" rel="noopener" class="inline-flex items-center text-accent-cyan hover:text-accent-teal transition-colors">
                             View on GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
@@ -505,9 +559,14 @@
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="tech-tag">Go</span>
                             <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Python</span>
                             <span class="tech-tag">Docker/Swarm</span>
                             <span class="tech-tag">Kubernetes</span>
                             <span class="tech-tag">AWS/EKS</span>
+                            <span class="tech-tag">Terraform</span>
+                            <span class="tech-tag">Helm</span>
+                            <span class="tech-tag">Grafana</span>
+                            <span class="tech-tag">Prometheus</span>
                         </div>
                         <a target="_blank" rel="noopener" class="inline-flex items-center text-accent-cyan hover:text-accent-teal transition-colors">
                             View on GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
@@ -535,7 +594,7 @@
         </section>
 
         <!-- Insights Section -->
-        <section id="insights" class="py-20 bg-bg-primary">
+        <section id="insights" class="py-20 bg-bg-secondary">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Insights & Thought Leadership</h2>
                 <p class="text-center text-text-secondary">Coming soon...</p>
@@ -543,7 +602,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-bg-secondary">
+        <section id="contact" class="py-20 bg-bg-primary">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up">Get in Touch</h2>
                 <p class="text-text-secondary text-center mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
@@ -688,7 +747,7 @@
                 </div>
 
                 <div class="flex space-x-4 mt-4 md:mt-0">
-                    <a href="#hero" class="text-text-secondary hover:text-accent-cyan transition-colors">Home</a>
+                    <a href="/" class="text-text-secondary hover:text-accent-cyan transition-colors">Home</a>
                     <a href="#about" class="text-text-secondary hover:text-accent-cyan transition-colors">About</a>
                     <a href="#expertise" class="text-text-secondary hover:text-accent-cyan transition-colors">Expertise</a>
                     <a href="#contact" class="text-text-secondary hover:text-accent-cyan transition-colors">Contact</a>

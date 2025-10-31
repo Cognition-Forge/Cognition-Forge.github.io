@@ -12,6 +12,23 @@
     --color-text-secondary: #b0b8cc;
 }
 
+/* Hero Background Image */
+#hero {
+    background-image: url('../images/agentic-ai-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* AgentGo Background Image */
+#agentgo {
+    background-image: url('../images/agentic-ai-bg2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
