@@ -3,28 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cognition Forge - AI Governance & Agentic Systems</title>
+    <title>AgentGo - AI Agent Orchestration Platform</title>
 
-    <!-- Meta Description -->
-    <meta name="description" content="20+ years of software engineering leadership in AI governance, agentic AI systems, trading platforms, and cloud architecture. Professional portfolio and thought leadership.">
+    <meta name="description" content="AgentGo is a high-performance AI agent orchestration platform built in Go. Multi-LLM support, durable agents, workflow engine, and production-grade observability.">
 
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Cognition Forge - AI Governance & Agentic Systems">
-    <meta property="og:description" content="Professional expertise in AI governance, agentic AI, trading platforms, and cloud architecture.">
-    <meta property="og:image" content="https://www.cognition-forge.com/assets/images/og-image.jpg">
-    <meta property="og:url" content="https://www.cognition-forge.com">
+    <meta property="og:title" content="AgentGo - AI Agent Orchestration Platform">
+    <meta property="og:description" content="High-performance AI agent orchestration built in Go. Multi-LLM, durable agents, workflow engine, production observability.">
+    <meta property="og:image" content="https://www.cognition-forge.com/assets/images/agentgo-arch2.png">
+    <meta property="og:url" content="https://www.cognition-forge.com/">
     <meta property="og:type" content="website">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cognition Forge - AI Governance & Agentic Systems">
-    <meta name="twitter:description" content="Professional expertise in AI governance, agentic AI, trading platforms, and cloud architecture.">
-    <meta name="twitter:image" content="https://www.cognition-forge.com/assets/images/og-image.jpg">
-
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo.png">
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -49,691 +39,754 @@
         }
     </script>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- AOS (Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        /* Hero background for this page */
+        #agentgo-hero {
+            background-image: url('assets/images/agentic-ai-bg2.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        #agentgo-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10,14,39,0.85) 0%, rgba(10,14,39,0.7) 50%, rgba(10,14,39,0.95) 100%);
+        }
+
+        /* Pain point cards */
+        .pain-card {
+            background: linear-gradient(135deg, rgba(255,50,50,0.08), rgba(26,31,58,0.5));
+            border: 1px solid rgba(255,100,100,0.2);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+        .solution-card {
+            background: linear-gradient(135deg, rgba(0,255,170,0.08), rgba(26,31,58,0.5));
+            border: 1px solid rgba(0,255,170,0.2);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+
+        /* Feature card */
+        .feature-card {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.8), rgba(10, 14, 39, 0.8));
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            border-color: var(--color-accent-cyan);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0, 212, 255, 0.2);
+        }
+        .feature-card .feature-icon {
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem;
+            background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(0,255,170,0.1));
+            margin-bottom: 1rem;
+        }
+
+        /* Stats counter */
+        .stat-item {
+            text-align: center;
+            padding: 1rem 1.5rem;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #00d4ff, #00ffaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Code block */
+        .code-block {
+            background: rgba(10, 14, 39, 0.95);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 0.75rem;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        .code-block .code-header {
+            background: rgba(26, 31, 58, 0.8);
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: #b0b8cc;
+        }
+        .code-block pre {
+            padding: 1.25rem;
+            margin: 0;
+            white-space: pre;
+        }
+        .code-comment { color: #6a737d; }
+        .code-key { color: #00d4ff; }
+        .code-value { color: #00ffaa; }
+        .code-string { color: #ffa500; }
+
+        /* Provider badge */
+        .provider-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: rgba(26,31,58,0.8);
+            border: 1px solid rgba(0,212,255,0.2);
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        .provider-badge:hover {
+            border-color: var(--color-accent-cyan);
+            background: rgba(0,212,255,0.1);
+        }
+
+        /* Step card */
+        .step-card {
+            background: linear-gradient(135deg, rgba(26, 31, 58, 0.6), rgba(10, 14, 39, 0.6));
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        .step-number {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00d4ff, #00ffaa);
+            color: #0a0e27;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0 auto 1rem;
+        }
+
+        /* Mobile menu */
+        #agentgo-mobile-menu {
+            transition: all 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        #agentgo-mobile-menu.active {
+            max-height: 500px;
+            padding-bottom: 1rem;
+            padding-top: 0.5rem;
+        }
+    </style>
 </head>
 <body class="bg-bg-primary text-text-primary font-sans">
-    <!-- Skip to Content Link for Accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent-cyan focus:text-bg-primary">
-        Skip to main content
-    </a>
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 bg-bg-primary/90 backdrop-blur-md border-b border-bg-secondary transition-all duration-300">
+    <nav class="fixed top-0 left-0 right-0 z-40 bg-bg-primary/90 backdrop-blur-md border-b border-bg-secondary transition-all duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
                 <a href="/" class="flex items-center space-x-3">
                     <img src="assets/images/logo.png" alt="Cognition Forge Logo" class="h-10 w-auto">
-                    <span class="text-xl font-bold text-accent-cyan">Cognition Forge</span>
+                    <span class="text-xl font-bold text-accent-cyan">AgentGo</span>
                 </a>
 
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="/" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Home</a>
-                    <a href="#about" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">About</a>
-                    <a href="#expertise" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Expertise</a>
-                    <a href="#projects" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Projects</a>
-                    <a href="#insights" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Insights</a>
-                    <a href="#contact" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Contact</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#why" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300">Why AgentGo</a>
+                    <a href="#features" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300">Features</a>
+                    <a href="#architecture" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300">Architecture</a>
+                    <a href="#providers" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300">Providers</a>
+                    <a href="#get-started" class="text-text-secondary hover:text-accent-cyan transition-colors duration-300">Get Started</a>
+                    <a href="portfolio.html" class="inline-flex items-center px-4 py-2 border border-accent-cyan/40 text-accent-cyan text-sm rounded-lg hover:bg-accent-cyan/10 transition-all duration-300">
+                        <i class="fas fa-user mr-2"></i>Portfolio
+                    </a>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded-lg p-2" aria-label="Toggle mobile menu">
-                    <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+                <button id="agentgo-menu-btn" class="md:hidden text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-cyan rounded-lg p-2" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars text-2xl" id="agentgo-menu-icon"></i>
                 </button>
             </div>
 
-            <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="md:hidden">
-                <div class="flex flex-col space-y-4">
-                    <a href="/" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Home</a>
-                    <a href="#about" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">About</a>
-                    <a href="#expertise" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Expertise</a>
-                    <a href="#projects" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Projects</a>
-                    <a href="#insights" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Insights</a>
-                    <a href="#contact" class="nav-link text-text-secondary hover:text-accent-cyan transition-colors duration-300">Contact</a>
+            <div id="agentgo-mobile-menu" class="md:hidden">
+                <div class="flex flex-col space-y-4 pb-4">
+                    <a href="#why" class="text-text-secondary hover:text-accent-cyan transition-colors">Why AgentGo</a>
+                    <a href="#features" class="text-text-secondary hover:text-accent-cyan transition-colors">Features</a>
+                    <a href="#architecture" class="text-text-secondary hover:text-accent-cyan transition-colors">Architecture</a>
+                    <a href="#providers" class="text-text-secondary hover:text-accent-cyan transition-colors">Providers</a>
+                    <a href="#get-started" class="text-text-secondary hover:text-accent-cyan transition-colors">Get Started</a>
+                    <a href="portfolio.html" class="text-accent-cyan hover:text-accent-teal transition-colors"><i class="fas fa-user mr-2"></i>Portfolio</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main id="main-content">
+    <main>
         <!-- Hero Section -->
-        <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
-            <div class="absolute inset-0 bg-bg-primary/80 z-0"></div> <!-- Overlay for readability -->
-            
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                <!-- Logo placeholder -->
-<!--
-                <div class="mb-8">
-                    <img src="assets/images/logo.png" alt="Cognition Forge" class="h-32 w-auto mx-auto">
+        <section id="agentgo-hero" class="min-h-screen flex items-center pt-16">
+            <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan text-sm font-medium mb-8" data-aos="fade-up">
+                        <i class="fas fa-bolt mr-2"></i>Built with Go for Production AI
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
+                        AI Agent <span class="gradient-text">Orchestration</span> Platform
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="200">
+                        Define agents in YAML. Orchestrate workflows. Stream responses. Ship a single binary. AgentGo brings compiled-language performance to agentic AI.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6" data-aos="fade-up" data-aos-delay="300">
+                        <a href="portfolio.html#contact" class="inline-flex items-center justify-center px-8 py-3 bg-accent-cyan text-bg-primary font-semibold rounded-lg hover:bg-accent-teal transition-all duration-300 btn-glow">
+                            <i class="fas fa-envelope mr-2"></i>Request Access
+                        </a>
+                        <a href="agentgo-comparison.html" class="inline-flex items-center justify-center px-8 py-3 border-2 border-accent-cyan/50 text-accent-cyan font-semibold rounded-lg hover:bg-accent-cyan/10 transition-all duration-300">
+                            <i class="fas fa-chart-line mr-2"></i>Framework Comparison
+                        </a>
+                    </div>
+                    <p class="text-text-secondary text-sm" data-aos="fade-up" data-aos-delay="350">
+                        <i class="fas fa-lock text-accent-cyan/60 mr-1"></i>Private repository — <a href="portfolio.html#contact" class="text-accent-cyan hover:text-accent-teal transition-colors">contact us</a> for access
+                    </p>
+
+                    <!-- Stats Bar -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto bg-bg-secondary/60 backdrop-blur-sm rounded-xl border border-accent-cyan/10 p-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="stat-item">
+                            <div class="stat-number">87+</div>
+                            <div class="text-text-secondary text-sm">Features</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">120K</div>
+                            <div class="text-text-secondary text-sm">RPM Capacity</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">~20MB</div>
+                            <div class="text-text-secondary text-sm">Binary Size</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4</div>
+                            <div class="text-text-secondary text-sm">LLM Providers</div>
+                        </div>
+                    </div>
                 </div>
--->
+            </div>
+        </section>
 
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan via-accent-teal to-accent-purple">
-                        Cognition Forge
-                    </span>
-                </h1>
-
-                <p class="text-xl sm:text-2xl md:text-3xl text-text-secondary mb-8">
-                    Pioneering AI Governance & Agentic Systems
+        <!-- Why AgentGo -->
+        <section id="why" class="py-20 bg-bg-secondary">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up">
+                    Why <span class="gradient-text">AgentGo</span>?
+                </h2>
+                <p class="text-text-secondary text-center mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Purpose-built to solve the real pain points of running AI agents in production
                 </p>
 
-                <!-- Typing animation container -->
-                <div class="text-lg sm:text-xl text-accent-teal mb-12 h-8">
-                    <span id="typing-text"></span>
-                </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Pain / Solution pairs -->
+                    <div class="space-y-6" data-aos="fade-right">
+                        <h3 class="text-lg font-semibold text-red-400 flex items-center"><i class="fas fa-times-circle mr-2"></i>The Problem</h3>
 
-                <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="#projects" class="px-8 py-3 bg-accent-cyan text-bg-primary font-semibold rounded-lg hover:bg-accent-teal transition-colors duration-300 shadow-lg hover:shadow-accent-cyan/50">
-                        View Work
-                    </a>
-                    <a href="#contact" class="px-8 py-3 border-2 border-accent-cyan text-accent-cyan font-semibold rounded-lg hover:bg-accent-cyan hover:text-bg-primary transition-all duration-300">
-                        Contact
-                    </a>
-                    <a href="https://github.com/Cognition-Forge" target="_blank" rel="noopener" class="px-8 py-3 border-2 border-accent-purple text-accent-purple font-semibold rounded-lg hover:bg-accent-purple hover:text-white transition-all duration-300 flex items-center gap-2">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-20 bg-bg-secondary">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12" data-aos="fade-up">About Cognition Forge</h2>
-
-                <div class="max-w-5xl mx-auto">
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <!-- Brand Avatar/Logo -->
-                        <div class="flex justify-center" data-aos="fade-right">
-                            <img src="assets/images/avatar.png" alt="Cognition Forge Brand Mascot" loading="lazy" class="w-64 h-64 rounded-full border-4 border-accent-cyan shadow-2xl shadow-accent-cyan/30">
+                        <div class="pain-card">
+                            <h4 class="font-semibold mb-2">Heavy Python Runtimes</h4>
+                            <p class="text-text-secondary text-sm">Multi-GB Docker images, slow cold starts, GIL-limited concurrency. Every agent deployment becomes an infrastructure burden.</p>
                         </div>
-
-                        <!-- Professional Overview -->
-                        <div data-aos="fade-left">
-                            <h3 class="text-2xl font-semibold text-accent-cyan mb-6">20+ Years of Innovation Leadership</h3>
-                            <p class="text-text-secondary text-lg mb-6 leading-relaxed">
-                                Cognition Forge represents decades of expertise in architecting large-scale software & intelligent systems that bridge the gap between cutting-edge AI technology and real-world enterprise solutions.
-                            </p>
-                            <p class="text-text-secondary text-lg mb-6 leading-relaxed">
-                                Specializing in <span class="text-accent-teal font-semibold">Cloud Architecture</span>, <span class="text-accent-teal font-semibold">AI-assisted software engineering</span>, <span class="text-accent-teal font-semibold">Agentic AI systems</span>, and <span class="text-accent-teal font-semibold">Workflow automation</span>, we pioneer approaches that transform how organizations leverage artificial intelligence in software development and operations.
-                            </p>
+                        <div class="pain-card">
+                            <h4 class="font-semibold mb-2">Poor Concurrency Models</h4>
+                            <p class="text-text-secondary text-sm">Thread pools and async/await don't scale. Running 100+ concurrent agents means fighting your runtime, not building features.</p>
+                        </div>
+                        <div class="pain-card">
+                            <h4 class="font-semibold mb-2">No Built-in Observability</h4>
+                            <p class="text-text-secondary text-sm">Bolting on monitoring after the fact. Custom metrics, tracing, and audit logging are afterthoughts in most frameworks.</p>
+                        </div>
+                        <div class="pain-card">
+                            <h4 class="font-semibold mb-2">Configuration Sprawl</h4>
+                            <p class="text-text-secondary text-sm">Agent definitions scattered across code, environment variables, and deployment configs. No single source of truth.</p>
                         </div>
                     </div>
 
-                    <!-- Core Competencies -->
-                    <div class="mt-16" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="text-2xl font-semibold text-center mb-8">Core Competencies</h3>
-                        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <div class="bg-bg-primary p-6 rounded-lg border border-accent-cyan/20 hover:border-accent-cyan transition-colors">
-                                <div class="text-accent-cyan text-3xl mb-3">
-                                    <i class="fas fa-brain"></i>
-                                </div>
-                                <h4 class="font-semibold text-lg mb-2">AI Governance</h4>
-                                <p class="text-text-secondary text-sm">
-                                    Design and implementation of comprehensive frameworks, policies, and operational practices ensuring responsible development, deployment, and oversight of Generative AI technologies across organizational contexts
-                                </p>
-                            </div>
-                            <div class="bg-bg-primary p-6 rounded-lg border border-accent-teal/20 hover:border-accent-teal transition-colors">
-                                <div class="text-accent-teal text-3xl mb-3">
-                                    <i class="fas fa-robot"></i>
-                                </div>
-                                <h4 class="font-semibold text-lg mb-2">Agentic AI Systems</h4>
-                                <p class="text-text-secondary text-sm">
-                                    Architecture, design, and implementation of autonomous AI agents capable of multi-step reasoning, tool use, and self-directed execution of complex workflows with minimal human intervention
-                                </p>
-                            </div>
-                            <div class="bg-bg-primary p-6 rounded-lg border border-accent-orange/20 hover:border-accent-orange transition-colors">
-                                <div class="text-accent-orange text-3xl mb-3">
-                                    <i class="fas fa-cloud"></i>
-                                </div>
-                                <h4 class="font-semibold text-lg mb-2">Cloud Architecture</h4>
-                                <p class="text-text-secondary text-sm">
-                                    Design and deployment of scalable, resilient microservices infrastructure leveraging cloud-native technologies for distributed systems, containerization, and event-driven architectures
-                                </p>
-                            </div>
-                            <div class="bg-bg-primary p-6 rounded-lg border border-accent-purple/20 hover:border-accent-purple transition-colors">
-                                <div class="text-accent-purple text-3xl mb-3">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <h4 class="font-semibold text-lg mb-2">Trading Platforms</h4>
-                                <p class="text-text-secondary text-sm">
-                                    Development of high-performance, low-latency financial trading systems encompassing real-time market data processing, order execution engines, and risk management for stocks, futures, and cryptocurrency markets
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="space-y-6" data-aos="fade-left">
+                        <h3 class="text-lg font-semibold text-accent-teal flex items-center"><i class="fas fa-check-circle mr-2"></i>The AgentGo Solution</h3>
 
-                    <!-- Research Interests -->
-                    <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="300">
-                        <h3 class="text-2xl font-semibold mb-6">Research & Innovation Focus</h3>
-                        <div class="flex flex-wrap justify-center gap-3">
-                            <span class="px-4 py-2 bg-accent-cyan/10 border border-accent-cyan/30 rounded-full text-accent-cyan">AI-assisted Software Development Process</span>
-                            <span class="px-4 py-2 bg-accent-teal/10 border border-accent-cyan/30 rounded-full text-accent-cyan">Agentic Context Engineering</span>
-                            <span class="px-4 py-2 bg-accent-teal/10 border border-accent-cyan/30 rounded-full text-accent-cyan">Agentic Workflows</span>
-                            <span class="px-4 py-2 bg-accent-teal/10 border border-accent-cyan/30 rounded-full text-accent-cyan">Generative AI Applications</span>
-                            <span class="px-4 py-2 bg-accent-teal/10 border border-accent-teal/30 rounded-full text-accent-teal">Software Engineering</span>
-                            <span class="px-4 py-2 bg-accent-teal/10 border border-accent-teal/30 rounded-full text-accent-teal">Software Architect</span>
-                            <span class="px-4 py-2 bg-accent-teal/10 border border-accent-teal/30 rounded-full text-accent-teal">Cloud Architecture</span>
-                            <span class="px-4 py-2 bg-accent-teal/10 border border-accent-teal/30 rounded-full text-accent-teal">Microservices</span>
-                            <span class="px-4 py-2 bg-accent-orange/10 border border-accent-orange/30 rounded-full text-accent-orange">Real-time Messaging</span>
-                            <span class="px-4 py-2 bg-accent-orange/10 border border-accent-orange/30 rounded-full text-accent-orange">Async Event-Driven Frameworks</span>
-                            <span class="px-4 py-2 bg-accent-purple/10 border border-accent-orange/30 rounded-full text-accent-orange">Algorithmic Trading</span>
-                            <span class="px-4 py-2 bg-accent-cyan/10 border border-accent-purple/30 rounded-full text-accent-purple">System/Network Security and Monitoring</span>
-                            <span class="px-4 py-2 bg-accent-cyan/10 border border-accent-purple/30 rounded-full text-accent-purple">Security Solutions</span>
-                            <span class="px-4 py-2 bg-accent-teal/10 border border-accent-purple/30 rounded-full text-accent-purple">Performance Optimization</span>
+                        <div class="solution-card">
+                            <h4 class="font-semibold mb-2">Compiled Go Binary</h4>
+                            <p class="text-text-secondary text-sm">~20MB statically-linked binary. Sub-second cold starts. No interpreter, no virtual environment, no dependency hell.</p>
+                        </div>
+                        <div class="solution-card">
+                            <h4 class="font-semibold mb-2">Goroutine Worker Pool</h4>
+                            <p class="text-text-secondary text-sm">Native goroutine-based scheduler handles thousands of concurrent agents. Zero contention, built-in backpressure, graceful shutdown.</p>
+                        </div>
+                        <div class="solution-card">
+                            <h4 class="font-semibold mb-2">50+ Prometheus Metrics</h4>
+                            <p class="text-text-secondary text-sm">Instrumented from day one. Pre-built Grafana dashboards, JSONL audit logs, structured logging, and cost tracking out of the box.</p>
+                        </div>
+                        <div class="solution-card">
+                            <h4 class="font-semibold mb-2">Single YAML Per Agent</h4>
+                            <p class="text-text-secondary text-sm">One file defines the agent: model, tools, prompts, permissions, guardrails. Hot-reload on change. Pack system for distribution.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Expertise Section -->
-        <section id="expertise" class="py-20 bg-bg-primary">
+        <!-- Feature Grid -->
+        <section id="features" class="py-20 bg-bg-primary">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up">Expertise Domains</h2>
-                <p class="text-text-secondary text-center mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                    Deep technical expertise across AI, cloud infrastructure, financial technology, and enterprise security
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up">
+                    Platform <span class="gradient-text">Features</span>
+                </h2>
+                <p class="text-text-secondary text-center mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Everything you need to build, deploy, and operate AI agents at scale
                 </p>
 
-                <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                    <!-- AI & Innovation Hub -->
-                    <div class="expertise-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon">
-                            <i class="fas fa-brain"></i>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    <!-- Feature 1: Multi-LLM -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain text-accent-cyan text-lg"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4 text-accent-cyan">AI & Innovation Hub</h3>
-                        <ul class="space-y-3 text-text-secondary">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>AI Governance frameworks for software engineering lifecycle</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>Agentic workflow automation and orchestration</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>Research on Context Engineering and Context Collapse</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>AI-assisted Infrastructure Captial Project</span>
-                            </li>
-                        </ul>
+                        <h3 class="text-lg font-semibold mb-3">Multi-LLM Providers</h3>
+                        <p class="text-text-secondary text-sm mb-4">Gemini, OpenAI, Anthropic, and LiteLLM proxy. Switch providers per-agent via config. Streaming and function calling across all backends.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tech-tag text-xs">Gemini</span>
+                            <span class="tech-tag text-xs">OpenAI</span>
+                            <span class="tech-tag text-xs">Anthropic</span>
+                            <span class="tech-tag text-xs">LiteLLM</span>
+                        </div>
                     </div>
 
-                    <!-- Cloud & Architecture -->
-                    <div class="expertise-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon">
-                            <i class="fas fa-cloud"></i>
+                    <!-- Feature 2: Agents -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot text-accent-cyan text-lg"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4 text-accent-cyan">Cloud & Architecture</h3>
-                        <ul class="space-y-3 text-text-secondary">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>Microservices architecture design and implementation</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>Large-scale distributed systems and messaging services</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>Cloud-native application development (AWS, Azure, GCP)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>Performance optimization for high-throughput systems</span>
-                            </li>
-                        </ul>
+                        <h3 class="text-lg font-semibold mb-3">Flexible Agents</h3>
+                        <p class="text-text-secondary text-sm mb-4">YAML-defined agents with prompt templates, tool bindings, and schema validation. Pack system for reusable agent bundles. Subagent delegation.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tech-tag text-xs">YAML Config</span>
+                            <span class="tech-tag text-xs">Packs</span>
+                            <span class="tech-tag text-xs">Subagents</span>
+                        </div>
                     </div>
 
-                    <!-- Trading & FinTech -->
-                    <div class="expertise-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon">
-                            <i class="fas fa-chart-line"></i>
+                    <!-- Feature 3: Workflows -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-project-diagram text-accent-cyan text-lg"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4 text-accent-cyan">Trading & FinTech</h3>
-                        <ul class="space-y-3 text-text-secondary">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>Cloud-based e-trading platform architecture</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>Low-latency streaming for stock/futures/crypto quotes</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>Algorithmic trading systems with AI integration</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>Real-time market data processing and analytics</span>
-                            </li>
-                        </ul>
+                        <h3 class="text-lg font-semibold mb-3">Workflow Engine</h3>
+                        <p class="text-text-secondary text-sm mb-4">Sequential, parallel, and conditional execution. Dynamic supervisor pattern with event-driven orchestration. Visual diagram generation.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tech-tag text-xs">Branching</span>
+                            <span class="tech-tag text-xs">Parallel</span>
+                            <span class="tech-tag text-xs">Dynamic</span>
+                        </div>
                     </div>
 
-                    <!-- Enterprise Solutions -->
-                    <div class="expertise-card" data-aos="fade-up" data-aos-delay="400">
-                        <div class="icon">
-                            <i class="fas fa-shield-alt"></i>
+                    <!-- Feature 4: Durable Agents -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="250">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt text-accent-cyan text-lg"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4 text-accent-cyan">Enterprise Solutions</h3>
-                        <ul class="space-y-3 text-text-secondary">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>Enterprise email and web security solutions</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>Network security monitoring and threat detection</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>SQL/NoSQL database optimization and caching strategies</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-accent-teal mt-1 mr-3"></i>
-                                <span>Agile methodologies (Kanban, Scrum) and team leadership</span>
-                            </li>
-                        </ul>
+                        <h3 class="text-lg font-semibold mb-3">Durable Agents</h3>
+                        <p class="text-text-secondary text-sm mb-4">Persistent, event-driven agent instances with SQLite checkpoints. Crash recovery, pause/resume, mailbox messaging, and approval workflows.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tech-tag text-xs">Checkpoints</span>
+                            <span class="tech-tag text-xs">Crash Recovery</span>
+                            <span class="tech-tag text-xs">Mailbox</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5: Chat & Streaming -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments text-accent-cyan text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-3">Chat & Streaming</h3>
+                        <p class="text-text-secondary text-sm mb-4">Multi-turn chat sessions with SSE token streaming. Interactive REPL with tool display, delegation, and background task management.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tech-tag text-xs">SSE</span>
+                            <span class="tech-tag text-xs">REPL</span>
+                            <span class="tech-tag text-xs">Multi-turn</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature 6: Tools -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="350">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools text-accent-cyan text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-3">Tool Ecosystem</h3>
+                        <p class="text-text-secondary text-sm mb-4">Native Go tools, YAML-configured tools, shell scripts, HTTP endpoints, and MCP server integration. Skill-provided tools with schema validation and timeouts.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tech-tag text-xs">Native</span>
+                            <span class="tech-tag text-xs">Config</span>
+                            <span class="tech-tag text-xs">Script</span>
+                            <span class="tech-tag text-xs">MCP</span>
+                            <span class="tech-tag text-xs">Skill Tools</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature 7: Scheduling -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock text-accent-cyan text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-3">Scheduling & Triggers</h3>
+                        <p class="text-text-secondary text-sm mb-4">Cron scheduling with SQLite persistence. Webhook triggers with HMAC validation. Timer-based and poll-based event sources for durable agents.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tech-tag text-xs">Cron</span>
+                            <span class="tech-tag text-xs">Webhooks</span>
+                            <span class="tech-tag text-xs">HMAC</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature 8: Observability -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="450">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-bar text-accent-cyan text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-3">Observability</h3>
+                        <p class="text-text-secondary text-sm mb-4">50+ Prometheus metrics with pre-built Grafana dashboards. Structured JSON logging, Loki integration, and JSONL audit trails for every tool call.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tech-tag text-xs">Prometheus</span>
+                            <span class="tech-tag text-xs">Grafana</span>
+                            <span class="tech-tag text-xs">Loki</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature 9: Security -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock text-accent-cyan text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-3">Security & Guardrails</h3>
+                        <p class="text-text-secondary text-sm mb-4">API key authentication, filesystem and network permission sandboxing. Cost guardrails with per-agent budgets. Rate limiting and circuit breakers.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tech-tag text-xs">Auth</span>
+                            <span class="tech-tag text-xs">Permissions</span>
+                            <span class="tech-tag text-xs">Cost Limits</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature 10: Skills -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="550">
+                        <div class="feature-icon">
+                            <i class="fas fa-puzzle-piece text-accent-cyan text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-3">Skills System</h3>
+                        <p class="text-text-secondary text-sm mb-4">Self-contained knowledge packages with trigger-based discovery. Skills bundle instructions, tools, and dependencies with SemVer compatibility. Supports remote MCP/HTTP sources and inter-skill dependencies.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tech-tag text-xs">SKILL.yaml</span>
+                            <span class="tech-tag text-xs">Triggers</span>
+                            <span class="tech-tag text-xs">Dependencies</span>
+                            <span class="tech-tag text-xs">Remote</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature 11: Subagents -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="feature-icon">
+                            <i class="fas fa-sitemap text-accent-cyan text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-3">Subagent Delegation</h3>
+                        <p class="text-text-secondary text-sm mb-4">Spawn isolated child agents for parallel research, coding, or exploration. Type-defined subagents with their own tool sets and sandboxed execution contexts.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tech-tag text-xs">Explorer</span>
+                            <span class="tech-tag text-xs">Coder</span>
+                            <span class="tech-tag text-xs">Researcher</span>
+                            <span class="tech-tag text-xs">Planner</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- AgentGo Section -->
-        <section id="agentgo" class="py-20 bg-bg-secondary">
-            <div class="absolute inset-0 bg-bg-primary/90 z-0"></div> <!-- Overlay for readability -->
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12" data-aos="fade-up">AgentGo Platform</h2>
+        <!-- Architecture -->
+        <section id="architecture" class="py-20 bg-bg-secondary">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up">
+                    <span class="gradient-text">Architecture</span>
+                </h2>
+                <p class="text-text-secondary text-center mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    A modular, layered architecture designed for extensibility and production reliability
+                </p>
 
-                <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-                    <!-- Left: Content -->
+                <div class="max-w-4xl mx-auto mb-12" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-accent-cyan to-accent-teal rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                        <img src="assets/images/agentgo-arch2.png" alt="AgentGo Architecture Diagram" class="relative rounded-lg shadow-2xl border border-accent-cyan/20 w-full">
+                    </div>
+                </div>
+
+                <div class="max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+                    <div class="code-block">
+                        <div class="code-header"><i class="fas fa-sitemap mr-2"></i>Request Flow</div>
+                        <pre>
+<span class="code-key">Request</span> <span class="code-comment">→</span> <span class="code-value">Router</span> <span class="code-comment">→</span> <span class="code-value">Handler</span> <span class="code-comment">→</span> <span class="code-value">Scheduler</span> <span class="code-comment">→</span> <span class="code-value">Agent</span> <span class="code-comment">→</span> <span class="code-key">GenAI</span>
+                   <span class="code-comment">↓</span>           <span class="code-comment">↓</span>
+             <span class="code-value">WorkflowEngine</span>  <span class="code-value">ToolRegistry</span>
+                   <span class="code-comment">↓</span>               <span class="code-comment">↓</span>
+             <span class="code-value">ChatService</span>    <span class="code-value">DelegationManager</span>
+                   <span class="code-comment">↓</span>               <span class="code-comment">↓</span>
+             <span class="code-value">SSE Streaming</span>  <span class="code-value">CronScheduler</span>
+                                      <span class="code-comment">↓</span>
+                                <span class="code-value">DurableManager</span> <span class="code-comment">→</span> <span class="code-value">Instance(s)</span> <span class="code-comment">→</span> <span class="code-key">Orchestrator</span></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Example -->
+        <section class="py-20 bg-bg-primary">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up">
+                    Define Agents in <span class="gradient-text">YAML</span>
+                </h2>
+                <p class="text-text-secondary text-center mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    No boilerplate code. One file defines your agent's model, behavior, tools, and constraints.
+                </p>
+
+                <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-start">
                     <div data-aos="fade-right">
-                        <h3 class="text-2xl font-semibold mb-6 text-accent-cyan">High-Performance Agent Orchestration (Go)</h3>
-                        <ul class="space-y-4 text-text-secondary">
-                            <li class="flex items-start">
-                                <i class="fas fa-microchip text-accent-teal mt-1 mr-3"></i>
-                                <span><strong class="text-text-primary">Core Architecture:</strong> Designed a concurrent, type-safe platform replacing heavy Python runtimes with a native Worker Pool Scheduler for high-throughput, non-blocking agent execution.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-cogs text-accent-teal mt-1 mr-3"></i>
-                                <span><strong class="text-text-primary">Modular Engines:</strong> Built unified Agent and Workflow Engines to orchestrate complex, multi-step tasks including background monitoring, parallel execution, and approval workflows.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-server text-accent-teal mt-1 mr-3"></i>
-                                <span><strong class="text-text-primary">Infrastructure:</strong> Engineered ultra-lightweight containers with Hot-Reloadable Configurations, allowing dynamic updates without downtime.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-network-wired text-accent-teal mt-1 mr-3"></i>
-                                <span><strong class="text-text-primary">Interface Layer:</strong> Implemented robust HTTP and CLI interfaces integrating a stateful Chat Service with an extensible Tool Registry.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-chart-bar text-accent-teal mt-1 mr-3"></i>
-                                <span><strong class="text-text-primary">Production Ops:</strong> Delivered full-stack observability with structured logging, custom Prometheus Metrics, and pre-provisioned Grafana Dashboards.</span>
-                            </li>
-                        </ul>
-                        <div class="mt-10">
-                            <a href="agentgo-comparison.html" class="inline-flex items-center px-6 py-3 bg-accent-cyan/10 border border-accent-cyan text-accent-cyan font-semibold rounded-lg hover:bg-accent-cyan hover:text-bg-primary transition-all duration-300">
-                                View Agent Framework Comparison
-                                <i class="fas fa-chart-line ml-2"></i>
-                            </a>
+                        <div class="code-block">
+                            <div class="code-header"><i class="fas fa-file-code mr-2"></i>configs/agents/researcher.yaml</div>
+                            <pre>
+<span class="code-key">name</span>: <span class="code-string">researcher</span>
+<span class="code-key">description</span>: <span class="code-string">Deep research agent with web access</span>
+<span class="code-key">model</span>: <span class="code-string">gemini-2.0-flash</span>
+<span class="code-key">provider</span>: <span class="code-string">gemini</span>
+
+<span class="code-key">prompt_template</span>: <span class="code-string">research.tmpl</span>
+<span class="code-key">system_prompt</span>: <span class="code-comment">|</span>
+  <span class="code-string">You are a thorough research assistant.</span>
+  <span class="code-string">Always cite sources and verify claims.</span>
+
+<span class="code-key">tools</span>:
+  - <span class="code-string">web_search</span>
+  - <span class="code-string">read_file</span>
+  - <span class="code-string">write_file</span>
+
+<span class="code-key">parameters</span>:
+  <span class="code-key">temperature</span>: <span class="code-value">0.3</span>
+  <span class="code-key">max_tokens</span>: <span class="code-value">8192</span>
+  <span class="code-key">max_iterations</span>: <span class="code-value">15</span>
+
+<span class="code-key">permissions</span>:
+  <span class="code-key">filesystem</span>:
+    <span class="code-key">allowed_dirs</span>: [<span class="code-string">"/data/research"</span>]
+  <span class="code-key">network</span>:
+    <span class="code-key">allowed_domains</span>: [<span class="code-string">"*.google.com"</span>]</pre>
                         </div>
                     </div>
 
-                    <!-- Right: Image -->
-                    <div data-aos="fade-left">
-                         <div class="relative group">
-                            <div class="absolute -inset-1 bg-gradient-to-r from-accent-cyan to-accent-teal rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                            <img src="assets/images/agentgo-arch2.png" alt="AgentGo Architecture" class="relative rounded-lg shadow-2xl border border-accent-cyan/20 w-full">
+                    <div class="space-y-6" data-aos="fade-left">
+                        <div class="expertise-card">
+                            <h3 class="text-lg font-semibold text-accent-cyan mb-3"><i class="fas fa-cog mr-2"></i>Declarative Configuration</h3>
+                            <p class="text-text-secondary text-sm">Every agent aspect is defined in YAML: model selection, prompt templates, tool bindings, iteration limits, and safety permissions. No Go code required to create new agents.</p>
+                        </div>
+
+                        <div class="expertise-card">
+                            <h3 class="text-lg font-semibold text-accent-cyan mb-3"><i class="fas fa-sync-alt mr-2"></i>Hot Reload</h3>
+                            <p class="text-text-secondary text-sm">Edit YAML, send SIGHUP. Agent configs reload without restarting the server. Zero-downtime updates to prompts, tools, and parameters.</p>
+                        </div>
+
+                        <div class="expertise-card">
+                            <h3 class="text-lg font-semibold text-accent-cyan mb-3"><i class="fas fa-box-open mr-2"></i>Pack System</h3>
+                            <p class="text-text-secondary text-sm">Bundle agents with their prompts, tools, and skills into distributable packs. Import community packs or create your own via manifest.yaml.</p>
+                        </div>
+
+                        <div class="expertise-card">
+                            <h3 class="text-lg font-semibold text-accent-cyan mb-3"><i class="fas fa-shield-alt mr-2"></i>Built-in Guardrails</h3>
+                            <p class="text-text-secondary text-sm">Filesystem sandboxing, network restrictions, cost budgets, and iteration limits are first-class config. Security is declarative, not an afterthought.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 bg-bg-primary">
+        <!-- LLM Providers -->
+        <section id="providers" class="py-20 bg-bg-secondary">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up">Projects & Portfolio</h2>
-                <p class="text-text-secondary text-center mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                    Selected projects showcasing practical implementations across AI, cloud, and trading domains
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up">
+                    LLM <span class="gradient-text">Providers</span>
+                </h2>
+                <p class="text-text-secondary text-center mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    First-class support for major LLM providers with a unified interface
                 </p>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="flex items-center justify-between mb-4">
-                            <i class="fab fa-github text-accent-purple text-3xl"></i>
-                            <span class="text-xs text-text-secondary">Public Repository</span>
+                <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="provider-badge">
+                        <i class="fas fa-gem text-accent-cyan text-xl"></i>
+                        <div>
+                            <div class="font-semibold text-sm">Google Gemini</div>
+                            <div class="text-text-secondary text-xs">Grounding & Search</div>
                         </div>
-                        <h3 class="text-xl font-semibold mb-3">AI-assisted Emergency Response System</h3>
-                        <p class="text-text-secondary mb-4">
-                            A PoC system for demonstrating how AI can assist with emergency analysis & accommodation in the material management system.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">LangChain</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">OpenAI API</span>
-                            <span class="tech-tag">Anthropic API</span>
-                            <span class="tech-tag">Google API</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                        </div>
-                        <a href="https://github.com/Cognition-Forge/emergency-response-system" target="_blank" rel="noopener" class="inline-flex items-center text-accent-cyan hover:text-accent-teal transition-colors">
-                            View on GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
-                        </a>
                     </div>
-
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="flex items-center justify-between mb-4">
-                            <i class="fab fa-github text-accent-purple text-3xl"></i>
-                            <span class="text-xs text-text-secondary">Public Repository</span>
+                    <div class="provider-badge">
+                        <i class="fas fa-circle-nodes text-accent-teal text-xl"></i>
+                        <div>
+                            <div class="font-semibold text-sm">OpenAI</div>
+                            <div class="text-text-secondary text-xs">GPT-4o & o1</div>
                         </div>
-                        <h3 class="text-xl font-semibold mb-3">NautilusTrader-based Framework</h3>
-                        <p class="text-text-secondary mb-4">
-                            A comprehensive trading framework built on NautilusTrader with modular architecture for backtesting algorithmic trading strategies using real market data.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">NautilusTrader</span>
-                            <span class="tech-tag">Yahoo Finance</span>
-                        </div>
-                        <a href="https://github.com/Cognition-Forge/test-nautilus" target="_blank" rel="noopener" class="inline-flex items-center text-accent-cyan hover:text-accent-teal transition-colors">
-                            View on GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
-                        </a>
                     </div>
-
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="flex items-center justify-between mb-4">
-                            <i class="fab fa-github text-accent-purple text-3xl"></i>
-                            <span class="text-xs text-text-secondary">Private Repository</span>
+                    <div class="provider-badge">
+                        <i class="fas fa-atom text-accent-purple text-xl"></i>
+                        <div>
+                            <div class="font-semibold text-sm">Anthropic</div>
+                            <div class="text-text-secondary text-xs">Claude Opus & Sonnet</div>
                         </div>
-                        <h3 class="text-xl font-semibold mb-3">Agentic Workflow Automations</h3>
-                        <p class="text-text-secondary mb-4">
-                            Code skeleton of autonomous AI agents capable of multi-step reasoning, tool use, and self-directed execution of complex workflows with minimal human intervention.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">LangChain</span>
-                            <span class="tech-tag">LangGraph</span>
-                            <span class="tech-tag">CrewAI</span>
-                            <span class="tech-tag">LLM</span>
-                            <span class="tech-tag">Ollama</span>
-                            <span class="tech-tag">LiteLLM</span>
-                            <span class="tech-tag">LangFuse</span>
-                            <span class="tech-tag">Redis</span>
-                            <span class="tech-tag">PostgreSQL/PGVector</span>
-                        </div>
-                        <a target="_blank" rel="noopener" class="inline-flex items-center text-accent-cyan hover:text-accent-teal transition-colors">
-                            View on GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
-                        </a>
                     </div>
-
-                    <!--
-                        PROJECT CARD TEMPLATE
-                            <span class="tech-tag">Redis</span>
-                            <span class="tech-tag">PostgreSQL/PGVector</span>
+                    <div class="provider-badge">
+                        <i class="fas fa-server text-accent-orange text-xl"></i>
+                        <div>
+                            <div class="font-semibold text-sm">LiteLLM Proxy</div>
+                            <div class="text-text-secondary text-xs">100+ Models</div>
                         </div>
-                        <a target="_blank" rel="noopener" class="inline-flex items-center text-accent-cyan hover:text-accent-teal transition-colors">
-                            View on GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
-                        </a>
                     </div>
-
-                    <!--
-                        PROJECT CARD TEMPLATE
-                        Copy this template to add more projects:
-                    -->
-
-                    <!-- Example Project 1 -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="flex items-center justify-between mb-4">
-                            <i class="fab fa-github text-accent-purple text-3xl"></i>
-                            <span class="text-xs text-text-secondary">Private Repository</span>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">AI Governance Framework</h3>
-                        <p class="text-text-secondary mb-4">
-                            Proprietary framework for implementing AI governance in software development processes with automated compliance checks.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag">AI Coding Agents</span>
-                            <span class="tech-tag">Spec-Driven Development</span>
-                            <span class="tech-tag">Context Engineering</span>
-                            <span class="tech-tag">Context Reduction</span>
-                            <span class="tech-tag">Context Isolation</span>
-                            <span class="tech-tag">Context Offloading</span>
-                        </div>
-                        <a target="_blank" rel="noopener" class="inline-flex items-center text-accent-cyan hover:text-accent-teal transition-colors">
-                            View on GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
-                        </a>
-                    </div>
-
-                    <!-- Example Project 2 -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="400">
-                        <div class="flex items-center justify-between mb-4">
-                            <i class="fab fa-github text-accent-purple text-3xl"></i>
-                            <span class="text-xs text-text-secondary">Private Repository</span>
-                        </div>
-
-                        <h3 class="text-xl font-semibold mb-3">Algorithmic Trading, Machine Learning, and Quant Strategy Development</h3>
-                        <p class="text-text-secondary mb-4">
-                            AI-assisted quant strategy IDE and autonomous trading agent powered by self-trained models for stock, futures, and cryptocurrency markets with risk management and backtesting capabilities.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">NautilusTrader</span>
-                            <span class="tech-tag">Yahoo Finance</span>
-                            <span class="tech-tag">FinMind</span>
-                        </div>
-                        <a target="_blank" rel="noopener" class="inline-flex items-center text-accent-cyan hover:text-accent-teal transition-colors">
-                            View on GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
-                        </a>
-                    </div>
-
-                    <!-- Example Project 3 -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="500">
-                        <div class="flex items-center justify-between mb-4">
-                            <i class="fab fa-github text-accent-purple text-3xl"></i>
-                            <span class="text-xs text-text-secondary">Private Repository</span>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Microservices Orchestrator</h3>
-                        <p class="text-text-secondary mb-4">
-                            Cloud-native orchestration platform for managing distributed microservices with auto-scaling and health monitoring.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag">Go</span>
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Docker/Swarm</span>
-                            <span class="tech-tag">Kubernetes</span>
-                            <span class="tech-tag">AWS/EKS</span>
-                            <span class="tech-tag">Terraform</span>
-                            <span class="tech-tag">Helm</span>
-                            <span class="tech-tag">Grafana</span>
-                            <span class="tech-tag">Prometheus</span>
-                        </div>
-                        <a target="_blank" rel="noopener" class="inline-flex items-center text-accent-cyan hover:text-accent-teal transition-colors">
-                            View on GitHub <i class="fas fa-external-link-alt ml-2 text-sm"></i>
-                        </a>
-                    </div>
-
-                    <!--
-                        TO ADD MORE PROJECTS:
-                        1. Copy one of the project cards above
-                        2. Update the title (h3 tag)
-                        3. Update the description (p tag)
-                        4. Update the tech tags (span.tech-tag)
-                        5. Update the GitHub link (a href)
-                        6. Adjust data-aos-delay if needed (100, 200, 300, 400, etc.)
-                    -->
                 </div>
 
-                <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
-                    <a href="https://github.com/Cognition-Forge" target="_blank" rel="noopener" class="inline-flex items-center px-8 py-3 border-2 border-accent-purple text-accent-purple font-semibold rounded-lg hover:bg-accent-purple hover:text-white transition-all duration-300">
-                        <i class="fab fa-github mr-2"></i>
-                        View All Projects on GitHub
+                <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center p-6">
+                        <i class="fas fa-stream text-accent-cyan text-3xl mb-4"></i>
+                        <h4 class="font-semibold mb-2">Token Streaming</h4>
+                        <p class="text-text-secondary text-sm">Real-time SSE streaming across all providers. Consistent callback interface regardless of backend.</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <i class="fas fa-plug text-accent-teal text-3xl mb-4"></i>
+                        <h4 class="font-semibold mb-2">Function Calling</h4>
+                        <p class="text-text-secondary text-sm">Unified tool/function schema. Provider-specific adaptors handle format differences transparently.</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <i class="fas fa-random text-accent-purple text-3xl mb-4"></i>
+                        <h4 class="font-semibold mb-2">Provider Failover</h4>
+                        <p class="text-text-secondary text-sm">RetryLLMCall with exponential backoff. Switch providers per-agent without code changes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance & Deployment -->
+        <section class="py-20 bg-bg-primary">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up">
+                    Performance & <span class="gradient-text">Deployment</span>
+                </h2>
+                <p class="text-text-secondary text-center mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Compiled for speed, packaged for simplicity
+                </p>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold gradient-text mb-2">&lt;100ms</div>
+                        <div class="text-text-secondary text-sm">Cold Start</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold gradient-text mb-2">~20MB</div>
+                        <div class="text-text-secondary text-sm">Docker Image</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold gradient-text mb-2">1000+</div>
+                        <div class="text-text-secondary text-sm">Concurrent Agents</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold gradient-text mb-2">0</div>
+                        <div class="text-text-secondary text-sm">Runtime Dependencies</div>
+                    </div>
+                </div>
+
+                <!-- Deployment Options -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+                    <div class="expertise-card text-center">
+                        <i class="fab fa-docker text-accent-cyan text-3xl mb-4"></i>
+                        <h4 class="font-semibold mb-2">Docker</h4>
+                        <p class="text-text-secondary text-sm">Minimal Alpine-based image. Single container, production-ready.</p>
+                    </div>
+                    <div class="expertise-card text-center">
+                        <i class="fas fa-layer-group text-accent-teal text-3xl mb-4"></i>
+                        <h4 class="font-semibold mb-2">Compose Stack</h4>
+                        <p class="text-text-secondary text-sm">Full observability stack: AgentGo + Prometheus + Grafana + Loki.</p>
+                    </div>
+                    <div class="expertise-card text-center">
+                        <i class="fas fa-cube text-accent-purple text-3xl mb-4"></i>
+                        <h4 class="font-semibold mb-2">Single Binary</h4>
+                        <p class="text-text-secondary text-sm">Download and run. Embedded configs and resources. No install step.</p>
+                    </div>
+                    <div class="expertise-card text-center">
+                        <i class="fas fa-sync text-accent-orange text-3xl mb-4"></i>
+                        <h4 class="font-semibold mb-2">Hot Reload</h4>
+                        <p class="text-text-secondary text-sm">SIGHUP reloads agent and workflow configs. Zero-downtime updates.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Get Started CTA -->
+        <section id="get-started" class="py-20 bg-bg-secondary">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up">
+                    Get <span class="gradient-text">Started</span>
+                </h2>
+                <p class="text-text-secondary text-center mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    From zero to running agents in three steps
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
+                    <div class="step-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="step-number">1</div>
+                        <h3 class="font-semibold mb-3">Clone & Build</h3>
+                        <div class="code-block text-left">
+                            <pre class="!p-3 text-xs"><span class="code-comment"># Request access first</span>
+<span class="code-key">git clone</span> <span class="code-string">&lt;repo-url&gt;</span>
+<span class="code-key">make</span> <span class="code-value">build</span></pre>
+                        </div>
+                    </div>
+
+                    <div class="step-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="step-number">2</div>
+                        <h3 class="font-semibold mb-3">Configure</h3>
+                        <div class="code-block text-left">
+                            <pre class="!p-3 text-xs"><span class="code-key">export</span> <span class="code-value">GEMINI_API_KEY</span>=<span class="code-string">your-key</span>
+<span class="code-comment"># Edit configs/agents/*.yaml</span></pre>
+                        </div>
+                    </div>
+
+                    <div class="step-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="step-number">3</div>
+                        <h3 class="font-semibold mb-3">Run</h3>
+                        <div class="code-block text-left">
+                            <pre class="!p-3 text-xs"><span class="code-key">./agentgo</span> <span class="code-value">serve</span>
+<span class="code-comment"># Or: make docker-run</span></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <a href="portfolio.html#contact" class="inline-flex items-center justify-center px-8 py-3 bg-accent-cyan text-bg-primary font-semibold rounded-lg hover:bg-accent-teal transition-all duration-300 btn-glow">
+                        <i class="fas fa-envelope mr-2"></i>Request Access
+                    </a>
+                    <a href="agentgo-comparison.html" class="inline-flex items-center justify-center px-8 py-3 border-2 border-accent-purple text-accent-purple font-semibold rounded-lg hover:bg-accent-purple hover:text-white transition-all duration-300">
+                        <i class="fas fa-chart-line mr-2"></i>Framework Comparison
                     </a>
                 </div>
-            </div>
-        </section>
-
-        <!-- Insights Section -->
-        <section id="insights" class="py-20 bg-bg-secondary">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Insights & Thought Leadership</h2>
-                <p class="text-center text-text-secondary">Coming soon...</p>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-bg-primary">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up">Get in Touch</h2>
-                <p class="text-text-secondary text-center mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                    Interested in collaboration, consulting, or discussing innovative AI solutions? Let's connect!
+                <p class="text-text-secondary text-sm text-center" data-aos="fade-up" data-aos-delay="550">
+                    <i class="fas fa-lock text-accent-cyan/60 mr-1"></i>Private repository — <a href="portfolio.html#contact" class="text-accent-cyan hover:text-accent-teal transition-colors">contact us</a> for access
                 </p>
-
-                <div class="max-w-4xl mx-auto">
-                    <div class="grid md:grid-cols-2 gap-12 items-start">
-                        <!-- Contact Information -->
-                        <div data-aos="fade-right">
-                            <div class="flex justify-center mb-8">
-                                <img src="assets/images/logo.png" alt="Cognition Forge" loading="lazy" class="h-24 w-auto">
-                            </div>
-
-                            <h3 class="text-xl font-semibold mb-6 text-center">Contact Methods</h3>
-
-                            <!-- Contact Icons -->
-                            <div class="flex justify-center gap-6 mb-8">
-                                <a href="mailto:contact@cognition-forge.com"
-                                   class="contact-icon"
-                                   title="Email: contact@cognition-forge.com"
-                                   aria-label="Send email to Cognition Forge">
-                                    <i class="fas fa-envelope"></i>
-                                </a>
-
-                                <a href="https://github.com/Cognition-Forge"
-                                   class="contact-icon"
-                                   title="GitHub"
-                                   aria-label="Visit Cognition Forge on GitHub"
-                                   target="_blank" rel="noopener">
-                                    <i class="fab fa-github"></i>
-                                </a>
-
-                                <a
-                                   class="contact-icon"
-                                   title="LinkedIn"
-                                   aria-label="Connect on LinkedIn"
-                                   target="_blank" rel="noopener">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-
-                            <!-- Domain Reference -->
-                            <div class="text-center mb-6">
-                                <p class="text-text-secondary mb-2">Visit our website</p>
-                                <a href="https://www.cognition-forge.com" class="text-accent-cyan hover:text-accent-teal text-lg font-semibold transition-colors">
-                                    www.cognition-forge.com
-                                </a>
-                            </div>
-
-                            <!-- Additional Info -->
-                            <div class="bg-bg-primary p-6 rounded-lg border border-accent-cyan/20 mt-8">
-                                <h4 class="font-semibold mb-3 text-accent-cyan">Areas of Interest</h4>
-                                <ul class="text-text-secondary space-y-2 text-sm">
-                                    <li class="flex items-start">
-                                        <i class="fas fa-circle text-accent-teal text-xs mt-1.5 mr-2"></i>
-                                        <span>AI Governance & Compliance Consulting</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-circle text-accent-teal text-xs mt-1.5 mr-2"></i>
-                                        <span>Agentic AI System Architecture</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-circle text-accent-teal text-xs mt-1.5 mr-2"></i>
-                                        <span>Trading Platform Development</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-circle text-accent-teal text-xs mt-1.5 mr-2"></i>
-                                        <span>Cloud Architecture & Scalability</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Contact Form -->
-                        <div data-aos="fade-left">
-                            <form id="contact-form" class="space-y-6">
-                                <div>
-                                    <label for="name" class="block text-sm font-medium mb-2">Name</label>
-                                    <input type="text"
-                                           id="name"
-                                           name="name"
-                                           required
-                                           class="form-input"
-                                           placeholder="Your name">
-                                </div>
-
-                                <div>
-                                    <label for="email" class="block text-sm font-medium mb-2">Email</label>
-                                    <input type="email"
-                                           id="email"
-                                           name="email"
-                                           required
-                                           class="form-input"
-                                           placeholder="your.email@example.com">
-                                </div>
-
-                                <div>
-                                    <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
-                                    <input type="text"
-                                           id="subject"
-                                           name="subject"
-                                           required
-                                           class="form-input"
-                                           placeholder="What would you like to discuss?">
-                                </div>
-
-                                <div>
-                                    <label for="message" class="block text-sm font-medium mb-2">Message</label>
-                                    <textarea id="message"
-                                              name="message"
-                                              required
-                                              rows="5"
-                                              class="form-input resize-none"
-                                              placeholder="Tell us about your project or inquiry..."></textarea>
-                                </div>
-
-                                <button type="submit"
-                                        class="w-full px-8 py-3 bg-accent-cyan text-bg-primary font-semibold rounded-lg hover:bg-accent-teal transition-colors duration-300 shadow-lg hover:shadow-accent-cyan/50">
-                                    Send Message
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
@@ -747,16 +800,16 @@
                     <span class="text-lg font-semibold text-accent-cyan">Cognition Forge</span>
                 </div>
 
-                <div class="text-text-secondary text-sm">
+                <div class="text-text-secondary text-sm text-center md:text-left">
                     <p>&copy; 2025 Cognition Forge. All rights reserved.</p>
                     <p class="mt-1">www.cognition-forge.com</p>
                 </div>
 
                 <div class="flex space-x-4 mt-4 md:mt-0">
                     <a href="/" class="text-text-secondary hover:text-accent-cyan transition-colors">Home</a>
-                    <a href="#about" class="text-text-secondary hover:text-accent-cyan transition-colors">About</a>
-                    <a href="#expertise" class="text-text-secondary hover:text-accent-cyan transition-colors">Expertise</a>
-                    <a href="#contact" class="text-text-secondary hover:text-accent-cyan transition-colors">Contact</a>
+                    <a href="portfolio.html" class="text-text-secondary hover:text-accent-cyan transition-colors">Portfolio</a>
+                    <a href="agentgo-comparison.html" class="text-text-secondary hover:text-accent-cyan transition-colors">Comparison</a>
+                    <a href="https://github.com/Cognition-Forge" target="_blank" rel="noopener" class="text-text-secondary hover:text-accent-cyan transition-colors">GitHub</a>
                 </div>
             </div>
         </div>
@@ -764,9 +817,43 @@
 
     <!-- AOS Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
 
-    <!-- Custom Scripts -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/typing.js"></script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('agentgo-menu-btn');
+        const mobileMenu = document.getElementById('agentgo-mobile-menu');
+        const menuIcon = document.getElementById('agentgo-menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            menuIcon.classList.toggle('fa-bars');
+            menuIcon.classList.toggle('fa-times');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.remove('fa-times');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
 </body>
 </html>
