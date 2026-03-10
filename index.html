@@ -181,6 +181,77 @@
             margin: 0 auto 1rem;
         }
 
+        /* Agent tabs */
+        .agent-tab {
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: #b0b8cc;
+            background: transparent;
+        }
+        .agent-tab:hover {
+            border-color: rgba(0, 212, 255, 0.6);
+            color: #ffffff;
+        }
+        .agent-tab.active {
+            background: #00d4ff;
+            color: #0a0e27;
+            border-color: #00d4ff;
+        }
+        .agent-tab-content {
+            display: none;
+        }
+        .agent-tab-content.active {
+            display: block;
+        }
+
+        /* Terminal block */
+        .terminal-block {
+            background: rgba(10, 14, 39, 0.95);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            line-height: 1.7;
+        }
+        .terminal-header {
+            background: rgba(26, 31, 58, 0.8);
+            padding: 0.6rem 1rem;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .terminal-body {
+            padding: 1.25rem;
+        }
+        .terminal-prompt {
+            color: #00ffaa;
+        }
+        .terminal-user {
+            color: #00d4ff;
+        }
+        .terminal-ai {
+            color: #b0b8cc;
+        }
+        .terminal-success {
+            color: #00ffaa;
+        }
+        .terminal-dim {
+            color: #6a737d;
+        }
+
         /* Mobile menu */
         #agentgo-mobile-menu {
             transition: all 0.3s ease;
@@ -563,9 +634,16 @@
 
                 <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-start">
                     <div data-aos="fade-right">
-                        <div class="code-block">
-                            <div class="code-header"><i class="fas fa-file-code mr-2"></i>configs/agents/researcher.yaml</div>
-                            <pre>
+                        <div class="flex gap-2 mb-4">
+                            <button class="agent-tab active" onclick="switchAgentTab('simple')">Simple Agent</button>
+                            <button class="agent-tab" onclick="switchAgentTab('durable')">Durable Agent</button>
+                            <button class="agent-tab" onclick="switchAgentTab('workflow')">Workflow</button>
+                        </div>
+
+                        <div id="tab-simple" class="agent-tab-content active">
+                            <div class="code-block">
+                                <div class="code-header"><i class="fas fa-file-code mr-2"></i>configs/agents/researcher.yaml</div>
+                                <pre>
 <span class="code-key">name</span>: <span class="code-string">researcher</span>
 <span class="code-key">description</span>: <span class="code-string">Deep research agent with web access</span>
 <span class="code-key">model</span>: <span class="code-string">gemini-2.0-flash</span>
@@ -591,6 +669,73 @@
     <span class="code-key">allowed_dirs</span>: [<span class="code-string">"/data/research"</span>]
   <span class="code-key">network</span>:
     <span class="code-key">allowed_domains</span>: [<span class="code-string">"*.google.com"</span>]</pre>
+                            </div>
+                        </div>
+
+                        <div id="tab-durable" class="agent-tab-content">
+                            <div class="code-block">
+                                <div class="code-header"><i class="fas fa-file-code mr-2"></i>configs/agents/sla-monitor.yaml</div>
+                                <pre>
+<span class="code-key">name</span>: <span class="code-string">sla-monitor</span>
+<span class="code-key">model</span>: <span class="code-string">gemini-2.5-flash</span>
+<span class="code-key">tools</span>: [<span class="code-string">loki-query</span>]
+<span class="code-key">durable</span>:
+  <span class="code-key">enabled</span>: <span class="code-value">true</span>
+  <span class="code-key">auto_start</span>: <span class="code-value">true</span>
+  <span class="code-key">objective</span>: <span class="code-comment">|</span>
+    <span class="code-string">Monitor service SLAs, track burn rates,</span>
+    <span class="code-string">escalate when thresholds are breached.</span>
+  <span class="code-key">activation_timeout</span>: <span class="code-value">2m</span>
+  <span class="code-key">max_tokens_per_activation</span>: <span class="code-value">8000</span>
+  <span class="code-key">max_cost_per_day</span>: <span class="code-value">2.00</span>
+  <span class="code-key">triggers</span>:
+    - <span class="code-key">type</span>: <span class="code-string">cron</span>
+      <span class="code-key">expr</span>: <span class="code-string">"*/10 * * * *"</span>
+      <span class="code-key">input</span>: <span class="code-string">'{"reason": "routine_check"}'</span>
+    - <span class="code-key">type</span>: <span class="code-string">webhook</span>
+      <span class="code-key">path</span>: <span class="code-string">"/hooks/sla-monitor/pagerduty"</span>
+      <span class="code-key">secret</span>: <span class="code-string">"${PD_WEBHOOK_SECRET}"</span>
+  <span class="code-key">state</span>:
+    <span class="code-key">initial</span>:
+      <span class="code-key">services</span>:
+        <span class="code-key">api-gateway</span>: { <span class="code-key">error_budget</span>: <span class="code-value">1000</span> }
+        <span class="code-key">auth-service</span>: { <span class="code-key">error_budget</span>: <span class="code-value">500</span> }
+    <span class="code-key">eviction</span>:
+      <span class="code-key">alert_history</span>: { <span class="code-key">max_items</span>: <span class="code-value">100</span> }
+  <span class="code-key">mailbox</span>:
+    <span class="code-key">severity_routing</span>:
+      <span class="code-key">critical</span>: [<span class="code-string">"outbox"</span>]
+      <span class="code-key">warning</span>: [<span class="code-string">"outbox"</span>]
+  <span class="code-key">permissions</span>:
+    <span class="code-key">network</span>: [<span class="code-string">"http:localhost:3100"</span>]</pre>
+                            </div>
+                        </div>
+
+                        <div id="tab-workflow" class="agent-tab-content">
+                            <div class="code-block">
+                                <div class="code-header"><i class="fas fa-file-code mr-2"></i>configs/workflows/research-pipeline.yaml</div>
+                                <pre>
+<span class="code-key">name</span>: <span class="code-string">research-pipeline</span>
+<span class="code-key">description</span>: <span class="code-string">Multi-step research with review</span>
+<span class="code-key">steps</span>:
+  - <span class="code-key">name</span>: <span class="code-string">gather</span>
+    <span class="code-key">agent</span>: <span class="code-string">researcher</span>
+    <span class="code-key">input</span>: <span class="code-string">"Research: {{.query}}"</span>
+  - <span class="code-key">name</span>: <span class="code-string">analyze</span>
+    <span class="code-key">agent</span>: <span class="code-string">analyst</span>
+    <span class="code-key">input</span>: <span class="code-string">"{{.steps.gather.output}}"</span>
+    <span class="code-key">depends_on</span>: [<span class="code-string">gather</span>]
+  - <span class="code-key">name</span>: <span class="code-string">review</span>
+    <span class="code-key">parallel</span>:
+      - <span class="code-key">agent</span>: <span class="code-string">fact-checker</span>
+        <span class="code-key">input</span>: <span class="code-string">"{{.steps.analyze.output}}"</span>
+      - <span class="code-key">agent</span>: <span class="code-string">editor</span>
+        <span class="code-key">input</span>: <span class="code-string">"{{.steps.analyze.output}}"</span>
+  - <span class="code-key">name</span>: <span class="code-string">publish</span>
+    <span class="code-key">agent</span>: <span class="code-string">writer</span>
+    <span class="code-key">input</span>: <span class="code-string">"{{.steps.review.outputs}}"</span>
+    <span class="code-key">condition</span>: <span class="code-string">"{{.steps.review.all_passed}}"</span></pre>
+                            </div>
                         </div>
                     </div>
 
@@ -613,6 +758,77 @@
                         <div class="expertise-card">
                             <h3 class="text-lg font-semibold text-accent-cyan mb-3"><i class="fas fa-shield-alt mr-2"></i>Built-in Guardrails</h3>
                             <p class="text-text-secondary text-sm">Filesystem sandboxing, network restrictions, cost budgets, and iteration limits are first-class config. Security is declarative, not an afterthought.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Config Manager -->
+        <section class="py-20 bg-bg-secondary">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4" data-aos="fade-up">
+                    AI-Powered <span class="gradient-text">Configuration</span>
+                </h2>
+                <p class="text-text-secondary text-center mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Describe what you need in plain English. The Config Manager agent builds production-ready configs through conversation.
+                </p>
+
+                <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-start">
+                    <div data-aos="fade-right">
+                        <div class="terminal-block">
+                            <div class="terminal-header">
+                                <span class="terminal-dot" style="background:#ff5f57"></span>
+                                <span class="terminal-dot" style="background:#febc2e"></span>
+                                <span class="terminal-dot" style="background:#28c840"></span>
+                                <span style="color:#b0b8cc; font-family: Inter, sans-serif; font-size: 0.75rem; margin-left: 0.5rem;">agentgo chat start config-manager</span>
+                            </div>
+                            <div class="terminal-body">
+                                <p class="terminal-prompt">$ agentgo chat start config-manager</p>
+                                <p class="terminal-dim" style="margin: 0.75rem 0 0.5rem">Session started · config-manager · gemini-2.5-flash</p>
+                                <p style="margin: 1rem 0 0.25rem"><span class="terminal-user">You:</span></p>
+                                <p class="terminal-user" style="margin-left: 1rem">Create a sentiment analysis agent that monitors<br>Twitter mentions and alerts on negative trends</p>
+                                <p style="margin: 1rem 0 0.25rem"><span class="terminal-ai" style="color:#00ffaa">Config Manager:</span></p>
+                                <p class="terminal-ai" style="margin-left: 1rem">I'll create a complete stack for that:</p>
+                                <p class="terminal-ai" style="margin-left: 1rem; margin-top: 0.25rem">
+                                    <span class="code-value">1.</span> Agent <span class="code-key">sentiment-monitor</span> with twitter-search,<br>
+                                    <span style="margin-left: 1.5rem">sentiment-analyze, and slack-notify tools</span><br>
+                                    <span class="code-value">2.</span> Workflow <span class="code-key">sentiment-pipeline</span> with<br>
+                                    <span style="margin-left: 1.5rem">fetch → analyze → alert steps</span><br>
+                                    <span class="code-value">3.</span> Cron trigger every <span class="code-key">15 minutes</span><br>
+                                    <span class="code-value">4.</span> Cost budget <span class="code-key">$5/day</span>
+                                </p>
+                                <p class="terminal-ai" style="margin-left: 1rem; margin-top: 0.75rem">Shall I proceed? <span class="code-key">[approve]</span> <span class="terminal-dim">[edit]</span> <span class="terminal-dim">[cancel]</span></p>
+                                <p style="margin: 0.75rem 0 0.25rem"><span class="terminal-user">You:</span> <span class="terminal-user">approve</span></p>
+                                <p style="margin-top: 0.75rem">
+                                    <span class="terminal-success">✓</span> <span class="terminal-ai">Created agent sentiment-monitor</span><br>
+                                    <span class="terminal-success">✓</span> <span class="terminal-ai">Created workflow sentiment-pipeline</span><br>
+                                    <span class="terminal-success">✓</span> <span class="terminal-ai">Validated all configs</span><br>
+                                    <span class="terminal-success">✓</span> <span class="terminal-ai">Hot-reloaded — agent is live</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6" data-aos="fade-left">
+                        <div class="expertise-card">
+                            <h3 class="text-lg font-semibold text-accent-cyan mb-3"><i class="fas fa-comments mr-2"></i>Conversational Setup</h3>
+                            <p class="text-text-secondary text-sm">Describe your business needs in plain English. The Config Manager translates requirements into valid YAML — agents, workflows, tools, and prompts.</p>
+                        </div>
+
+                        <div class="expertise-card">
+                            <h3 class="text-lg font-semibold text-accent-cyan mb-3"><i class="fas fa-shield-alt mr-2"></i>Safe Deployment</h3>
+                            <p class="text-text-secondary text-sm">Automatic validation, backup, and hot-reload with health checks. Approval gates for sensitive operations ensure nothing goes live without your sign-off.</p>
+                        </div>
+
+                        <div class="expertise-card">
+                            <h3 class="text-lg font-semibold text-accent-cyan mb-3"><i class="fas fa-layer-group mr-2"></i>Full Stack Generation</h3>
+                            <p class="text-text-secondary text-sm">Creates agents, workflows, tools, and prompts in one session. Pack-aware bundling groups related configs for portable deployment.</p>
+                        </div>
+
+                        <div class="expertise-card">
+                            <h3 class="text-lg font-semibold text-accent-cyan mb-3"><i class="fas fa-clipboard-list mr-2"></i>Audit Trail</h3>
+                            <p class="text-text-secondary text-sm">Every change is validated, backed up, and logged. Rollback information preserved so you can undo any configuration change.</p>
                         </div>
                     </div>
                 </div>
@@ -801,7 +1017,7 @@
                 </div>
 
                 <div class="text-text-secondary text-sm text-center md:text-left">
-                    <p>&copy; 2025 Cognition Forge. All rights reserved.</p>
+                    <p>&copy; 2026 Cognition Forge. All rights reserved.</p>
                     <p class="mt-1">www.cognition-forge.com</p>
                 </div>
 
@@ -824,6 +1040,14 @@
             once: true,
             offset: 100
         });
+
+        // Agent tab switcher
+        function switchAgentTab(tab) {
+            document.querySelectorAll('.agent-tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.agent-tab').forEach(el => el.classList.remove('active'));
+            document.getElementById('tab-' + tab).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
 
         // Mobile menu toggle
         const menuBtn = document.getElementById('agentgo-menu-btn');
