@@ -9,7 +9,7 @@
 
     <meta property="og:title" content="AgentGo - AI Agent Orchestration Platform">
     <meta property="og:description" content="High-performance AI agent orchestration built in Go. Multi-LLM, durable agents, workflow engine, production observability.">
-    <meta property="og:image" content="https://www.cognition-forge.com/assets/images/agentgo-arch2.png">
+    <meta property="og:image" content="https://www.cognition-forge.com/assets/images/agentgo-arch3.png">
     <meta property="og:url" content="https://www.cognition-forge.com/">
     <meta property="og:type" content="website">
 
@@ -337,15 +337,15 @@
                     <!-- Stats Bar -->
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto bg-bg-secondary/60 backdrop-blur-sm rounded-xl border border-accent-cyan/10 p-4" data-aos="fade-up" data-aos-delay="400">
                         <div class="stat-item">
-                            <div class="stat-number">87+</div>
-                            <div class="text-text-secondary text-sm">Features</div>
+                            <div class="stat-number">100+</div>
+                            <div class="text-text-secondary text-sm">Capabilities</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-number">120K</div>
                             <div class="text-text-secondary text-sm">RPM Capacity</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">~20MB</div>
+                            <div class="stat-number">~30MB</div>
                             <div class="text-text-secondary text-sm">Binary Size</div>
                         </div>
                         <div class="stat-item">
@@ -395,14 +395,14 @@
 
                         <div class="solution-card">
                             <h4 class="font-semibold mb-2">Compiled Go Binary</h4>
-                            <p class="text-text-secondary text-sm">~20MB statically-linked binary. Sub-second cold starts. No interpreter, no virtual environment, no dependency hell.</p>
+                            <p class="text-text-secondary text-sm">~30MB statically-linked binary. Sub-second cold starts. No interpreter, no virtual environment, no dependency hell.</p>
                         </div>
                         <div class="solution-card">
                             <h4 class="font-semibold mb-2">Goroutine Worker Pool</h4>
                             <p class="text-text-secondary text-sm">Native goroutine-based scheduler handles thousands of concurrent agents. Zero contention, built-in backpressure, graceful shutdown.</p>
                         </div>
                         <div class="solution-card">
-                            <h4 class="font-semibold mb-2">50+ Prometheus Metrics</h4>
+                            <h4 class="font-semibold mb-2">130+ Prometheus Metrics</h4>
                             <p class="text-text-secondary text-sm">Instrumented from day one. Pre-built Grafana dashboards, JSONL audit logs, structured logging, and cost tracking out of the box.</p>
                         </div>
                         <div class="solution-card">
@@ -488,10 +488,11 @@
                             <i class="fas fa-comments text-accent-cyan text-lg"></i>
                         </div>
                         <h3 class="text-lg font-semibold mb-3">Chat & Streaming</h3>
-                        <p class="text-text-secondary text-sm mb-4">Multi-turn chat sessions with SSE token streaming. Interactive REPL with tool display, delegation, and background task management.</p>
+                        <p class="text-text-secondary text-sm mb-4">Multi-turn chat sessions with SSE token streaming, idle watchdog, and parallel non-blocking tool dispatch. Interactive CLI REPL plus a React + TypeScript Web Console (chat, workflows, durable agents, schedules, mermaid diagrams).</p>
                         <div class="flex flex-wrap gap-1">
                             <span class="tech-tag text-xs">SSE</span>
                             <span class="tech-tag text-xs">REPL</span>
+                            <span class="tech-tag text-xs">Web UI</span>
                             <span class="tech-tag text-xs">Multi-turn</span>
                         </div>
                     </div>
@@ -502,12 +503,14 @@
                             <i class="fas fa-tools text-accent-cyan text-lg"></i>
                         </div>
                         <h3 class="text-lg font-semibold mb-3">Tool Ecosystem</h3>
-                        <p class="text-text-secondary text-sm mb-4">Native Go tools, YAML-configured tools, shell scripts, HTTP endpoints, and MCP server integration. Skill-provided tools with schema validation and timeouts.</p>
+                        <p class="text-text-secondary text-sm mb-4">Native Go tools, YAML-configured tools, shell scripts, MCP server integration, and connector-backed integrations (T1/T2/T3 authoring tiers). Skill-provided tools with schema validation and timeouts.</p>
                         <div class="flex flex-wrap gap-1">
                             <span class="tech-tag text-xs">Native</span>
                             <span class="tech-tag text-xs">Config</span>
                             <span class="tech-tag text-xs">Script</span>
                             <span class="tech-tag text-xs">MCP</span>
+                            <span class="tech-tag text-xs">Connector</span>
+                            <span class="tech-tag text-xs">DB</span>
                             <span class="tech-tag text-xs">Skill Tools</span>
                         </div>
                     </div>
@@ -574,13 +577,74 @@
                         <div class="feature-icon">
                             <i class="fas fa-sitemap text-accent-cyan text-lg"></i>
                         </div>
-                        <h3 class="text-lg font-semibold mb-3">Subagent Delegation</h3>
-                        <p class="text-text-secondary text-sm mb-4">Spawn isolated child agents for parallel research, coding, or exploration. Type-defined subagents with their own tool sets and sandboxed execution contexts.</p>
+                        <h3 class="text-lg font-semibold mb-3">Subagents & Handoff</h3>
+                        <p class="text-text-secondary text-sm mb-4">Spawn isolated child agents for parallel research, coding, or exploration. Type-defined subagents with their own tool sets, optional shared state, and pack-local resolution. In-session agent handoff (up to 3 hops) for multi-agent conversations.</p>
                         <div class="flex flex-wrap gap-1">
                             <span class="tech-tag text-xs">Explorer</span>
                             <span class="tech-tag text-xs">Coder</span>
                             <span class="tech-tag text-xs">Researcher</span>
                             <span class="tech-tag text-xs">Planner</span>
+                            <span class="tech-tag text-xs">Handoff</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature 12: Integrations & Connectors -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="650">
+                        <div class="feature-icon">
+                            <i class="fas fa-plug text-accent-cyan text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-3">Integrations & Connectors</h3>
+                        <p class="text-text-secondary text-sm mb-4">Config-driven outbound integrations. Pluggable secret backends (env, file, Vault, AWS-SM, GCP-SM), hot-reload, boot-time scope enforcement, and per-principal impersonation. Built-ins: GitHub, Postgres, generic REST. Codegen from OpenAPI.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tech-tag text-xs">Vault</span>
+                            <span class="tech-tag text-xs">Hot-Reload</span>
+                            <span class="tech-tag text-xs">OpenAPI</span>
+                            <span class="tech-tag text-xs">Impersonation</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature 13: Native DB Tools -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="700">
+                        <div class="feature-icon">
+                            <i class="fas fa-database text-accent-cyan text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-3">Native DB Tools</h3>
+                        <p class="text-text-secondary text-sm mb-4">First-class database access without LLM overhead. Schema-validated CRUD, raw parameterized SQL, and audit. Per-table access policies with grammar-validated row-filter expressions (32 SQL injection vectors rejected). SQLite + Postgres dialects.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tech-tag text-xs">SQLite</span>
+                            <span class="tech-tag text-xs">Postgres</span>
+                            <span class="tech-tag text-xs">Row Filters</span>
+                            <span class="tech-tag text-xs">Audit</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature 14: Memory & Context -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="750">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain text-accent-cyan text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-3">Memory & Context</h3>
+                        <p class="text-text-secondary text-sm mb-4">Per-agent persistent memory with four typed scopes (user, feedback, project, reference) and MEMORY.md indexing. Automatic stale-output pruning, LRU tmp file eviction, and pre-compaction LLM extraction so long sessions stay coherent.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tech-tag text-xs">Persistent</span>
+                            <span class="tech-tag text-xs">MEMORY.md</span>
+                            <span class="tech-tag text-xs">Auto-Prune</span>
+                            <span class="tech-tag text-xs">Compaction</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature 15: Channel Adapters -->
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="800">
+                        <div class="feature-icon">
+                            <i class="fas fa-comment-dots text-accent-cyan text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-3">Channel Adapters</h3>
+                        <p class="text-text-secondary text-sm mb-4">Slack (HMAC-SHA256, Block Kit) and Discord (Ed25519, deferred ack) out of the box. ChannelRouter with per-instance busy flag eliminates head-of-line blocking; exponential-backoff retry with crash recovery and dead-letter inspection.</p>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tech-tag text-xs">Slack</span>
+                            <span class="tech-tag text-xs">Discord</span>
+                            <span class="tech-tag text-xs">HMAC</span>
+                            <span class="tech-tag text-xs">Ed25519</span>
                         </div>
                     </div>
                 </div>
@@ -600,7 +664,7 @@
                 <div class="max-w-4xl mx-auto mb-12" data-aos="zoom-in" data-aos-delay="200">
                     <div class="relative group">
                         <div class="absolute -inset-1 bg-gradient-to-r from-accent-cyan to-accent-teal rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                        <img src="assets/images/agentgo-arch2.png" alt="AgentGo Architecture Diagram" class="relative rounded-lg shadow-2xl border border-accent-cyan/20 w-full">
+                        <img src="assets/images/agentgo-arch3.png" alt="AgentGo Architecture Diagram" class="relative rounded-lg shadow-2xl border border-accent-cyan/20 w-full">
                     </div>
                 </div>
 
@@ -646,7 +710,7 @@
                                 <pre>
 <span class="code-key">name</span>: <span class="code-string">researcher</span>
 <span class="code-key">description</span>: <span class="code-string">Deep research agent with web access</span>
-<span class="code-key">model</span>: <span class="code-string">gemini-2.0-flash</span>
+<span class="code-key">model</span>: <span class="code-string">gemini-3-flash-preview</span>
 <span class="code-key">provider</span>: <span class="code-string">gemini</span>
 
 <span class="code-key">prompt_template</span>: <span class="code-string">research.tmpl</span>
@@ -674,40 +738,48 @@
 
                         <div id="tab-durable" class="agent-tab-content">
                             <div class="code-block">
-                                <div class="code-header"><i class="fas fa-file-code mr-2"></i>configs/agents/sla-monitor.yaml</div>
+                                <div class="code-header"><i class="fas fa-file-code mr-2"></i>configs/agents/Jarvis/manifest.yaml</div>
                                 <pre>
-<span class="code-key">name</span>: <span class="code-string">sla-monitor</span>
-<span class="code-key">model</span>: <span class="code-string">gemini-2.5-flash</span>
-<span class="code-key">tools</span>: [<span class="code-string">loki-query</span>]
+<span class="code-key">id</span>: <span class="code-string">Jarvis</span>
+<span class="code-key">name</span>: <span class="code-string">Jarvis Agent</span>
+<span class="code-key">version</span>: <span class="code-string">"2.0.0"</span>
+<span class="code-key">model</span>: <span class="code-string">gemini-3.1-pro-preview</span>
+<span class="code-key">tools</span>: [<span class="code-string">save_memory</span>, <span class="code-string">read_memory</span>, <span class="code-string">delegate</span>, <span class="code-string">subagent</span>, <span class="code-string">...</span>]
+
+<span class="code-key">memory</span>:
+  <span class="code-key">enabled</span>: <span class="code-value">true</span>
+  <span class="code-key">scopes</span>: [<span class="code-string">global</span>, <span class="code-string">self</span>]
+  <span class="code-key">inject_mode</span>: <span class="code-string">index_only</span>
+
 <span class="code-key">durable</span>:
   <span class="code-key">enabled</span>: <span class="code-value">true</span>
   <span class="code-key">auto_start</span>: <span class="code-value">true</span>
   <span class="code-key">objective</span>: <span class="code-comment">|</span>
-    <span class="code-string">Monitor service SLAs, track burn rates,</span>
-    <span class="code-string">escalate when thresholds are breached.</span>
-  <span class="code-key">activation_timeout</span>: <span class="code-value">2m</span>
-  <span class="code-key">max_tokens_per_activation</span>: <span class="code-value">8000</span>
-  <span class="code-key">max_cost_per_day</span>: <span class="code-value">2.00</span>
+    <span class="code-string">Persistent personal AI assistant —</span>
+    <span class="code-string">briefings, tasks, and inbox handling.</span>
+  <span class="code-key">activation_timeout</span>: <span class="code-value">10m</span>
+  <span class="code-key">cooldown</span>: <span class="code-value">5s</span>
+  <span class="code-key">max_activations_per_hour</span>: <span class="code-value">120</span>
+  <span class="code-key">max_tokens_per_activation</span>: <span class="code-value">50000</span>
   <span class="code-key">triggers</span>:
     - <span class="code-key">type</span>: <span class="code-string">cron</span>
-      <span class="code-key">expr</span>: <span class="code-string">"*/10 * * * *"</span>
-      <span class="code-key">input</span>: <span class="code-string">'{"reason": "routine_check"}'</span>
-    - <span class="code-key">type</span>: <span class="code-string">webhook</span>
-      <span class="code-key">path</span>: <span class="code-string">"/hooks/sla-monitor/pagerduty"</span>
-      <span class="code-key">secret</span>: <span class="code-string">"${PD_WEBHOOK_SECRET}"</span>
+      <span class="code-key">expr</span>: <span class="code-string">"0 8 * * 1-5"</span>
+      <span class="code-key">input</span>: <span class="code-string">'{"reason": "morning_briefing"}'</span>
   <span class="code-key">state</span>:
     <span class="code-key">initial</span>:
-      <span class="code-key">services</span>:
-        <span class="code-key">api-gateway</span>: { <span class="code-key">error_budget</span>: <span class="code-value">1000</span> }
-        <span class="code-key">auth-service</span>: { <span class="code-key">error_budget</span>: <span class="code-value">500</span> }
+      <span class="code-key">tasks</span>: []
+      <span class="code-key">notes</span>: {}
     <span class="code-key">eviction</span>:
-      <span class="code-key">alert_history</span>: { <span class="code-key">max_items</span>: <span class="code-value">100</span> }
+      <span class="code-key">tasks</span>: { <span class="code-key">max_items</span>: <span class="code-value">200</span> }
+      <span class="code-key">notes</span>: { <span class="code-key">max_items</span>: <span class="code-value">100</span> }
   <span class="code-key">mailbox</span>:
     <span class="code-key">severity_routing</span>:
       <span class="code-key">critical</span>: [<span class="code-string">"outbox"</span>]
       <span class="code-key">warning</span>: [<span class="code-string">"outbox"</span>]
   <span class="code-key">permissions</span>:
-    <span class="code-key">network</span>: [<span class="code-string">"http:localhost:3100"</span>]</pre>
+    <span class="code-key">fs</span>: [<span class="code-string">"read:configs/"</span>, <span class="code-string">"write:data/sessions/"</span>]
+    <span class="code-key">create</span>: [<span class="code-string">skill</span>, <span class="code-string">agent</span>, <span class="code-string">workflow</span>]
+    <span class="code-key">approval_mode</span>: <span class="code-string">review</span></pre>
                             </div>
                         </div>
 
@@ -785,7 +857,7 @@
                             </div>
                             <div class="terminal-body">
                                 <p class="terminal-prompt">$ agentgo chat start config-manager</p>
-                                <p class="terminal-dim" style="margin: 0.75rem 0 0.5rem">Session started · config-manager · gemini-2.5-flash</p>
+                                <p class="terminal-dim" style="margin: 0.75rem 0 0.5rem">Session started · config-manager · gemini-3.1-pro-preview</p>
                                 <p style="margin: 1rem 0 0.25rem"><span class="terminal-user">You:</span></p>
                                 <p class="terminal-user" style="margin-left: 1rem">Create a sentiment analysis agent that monitors<br>Twitter mentions and alerts on negative trends</p>
                                 <p style="margin: 1rem 0 0.25rem"><span class="terminal-ai" style="color:#00ffaa">Config Manager:</span></p>
@@ -857,14 +929,14 @@
                         <i class="fas fa-circle-nodes text-accent-teal text-xl"></i>
                         <div>
                             <div class="font-semibold text-sm">OpenAI</div>
-                            <div class="text-text-secondary text-xs">GPT-4o & o1</div>
+                            <div class="text-text-secondary text-xs">GPT-4o & GPT-4 Turbo</div>
                         </div>
                     </div>
                     <div class="provider-badge">
                         <i class="fas fa-atom text-accent-purple text-xl"></i>
                         <div>
                             <div class="font-semibold text-sm">Anthropic</div>
-                            <div class="text-text-secondary text-xs">Claude Opus & Sonnet</div>
+                            <div class="text-text-secondary text-xs">Claude Sonnet 4 & Opus 4</div>
                         </div>
                     </div>
                     <div class="provider-badge">
@@ -913,7 +985,7 @@
                         <div class="text-text-secondary text-sm">Cold Start</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-3xl font-bold gradient-text mb-2">~20MB</div>
+                        <div class="text-3xl font-bold gradient-text mb-2">~30MB</div>
                         <div class="text-text-secondary text-sm">Docker Image</div>
                     </div>
                     <div class="text-center">
@@ -936,7 +1008,7 @@
                     <div class="expertise-card text-center">
                         <i class="fas fa-layer-group text-accent-teal text-3xl mb-4"></i>
                         <h4 class="font-semibold mb-2">Compose Stack</h4>
-                        <p class="text-text-secondary text-sm">Full observability stack: AgentGo + Prometheus + Grafana + Loki.</p>
+                        <p class="text-text-secondary text-sm">Modular: AgentGo + Postgres + Prometheus + Grafana + Loki. Independent up/down per layer.</p>
                     </div>
                     <div class="expertise-card text-center">
                         <i class="fas fa-cube text-accent-purple text-3xl mb-4"></i>

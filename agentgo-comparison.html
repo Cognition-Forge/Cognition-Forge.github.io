@@ -168,6 +168,7 @@
                     <button class="tab-btn bg-slate-100 text-slate-600 hover:bg-slate-200 px-4 py-2 rounded-full text-sm font-medium border border-slate-300 transition-colors" data-filter="Architecture">Architecture</button>
                     <button class="tab-btn bg-slate-100 text-slate-600 hover:bg-slate-200 px-4 py-2 rounded-full text-sm font-medium border border-slate-300 transition-colors" data-filter="Security">Security</button>
                     <button class="tab-btn bg-slate-100 text-slate-600 hover:bg-slate-200 px-4 py-2 rounded-full text-sm font-medium border border-slate-300 transition-colors" data-filter="Execution">Execution</button>
+                    <button class="tab-btn bg-slate-100 text-slate-600 hover:bg-slate-200 px-4 py-2 rounded-full text-sm font-medium border border-slate-300 transition-colors" data-filter="Integrations">Integrations</button>
                 </div>
             </div>
 
@@ -280,15 +281,63 @@
                             <li class="flex items-start">
                                 <span class="text-emerald-500 mr-2 mt-1">&#x25B8;</span>
                                 <div>
-                                    <strong class="text-white block">Embedded Metrics</strong>
-                                    Exposes `/metrics` out-of-the-box (`agentgo_streaming_output_events_total`, subagent execution tracking).
+                                    <strong class="text-white block">130+ Embedded Metrics</strong>
+                                    `/metrics` covers instance / durable / integration / cron / LLM / tool subsystems. OTel spans for connector calls; JSONL audit trail with sub-millisecond decorator overhead.
                                 </div>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-emerald-500 mr-2 mt-1">&#x25B8;</span>
                                 <div>
-                                    <strong class="text-white block">Integrated Monitoring</strong>
-                                    Docker Compose includes Prometheus (9090), Grafana (3000), and Loki via Promtail.
+                                    <strong class="text-white block">Modular Stack</strong>
+                                    Independent Compose layers (`deployments/{agentgo,postgres,monitoring}/`) — Prometheus (9090), Grafana (3000), Loki via Promtail, plus PostgreSQL (5432) for HA persistence.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Integrations & Connectors -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="bg-slate-800 text-emerald-400 p-2 rounded-lg text-xl">🔌</span>
+                            <h3 class="text-xl font-bold text-white">Integrations & Connectors</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-emerald-500 mr-2 mt-1">&#x25B8;</span>
+                                <div>
+                                    <strong class="text-white block">Pluggable Secrets</strong>
+                                    Lock-free `ConnectorRegistry` with hot-reload; SecretStore backends (env, file, Vault, AWS-SM, GCP-SM) gated by build tags. Double-buffered rotation drains in-flight calls without restart.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-500 mr-2 mt-1">&#x25B8;</span>
+                                <div>
+                                    <strong class="text-white block">Per-Principal Impersonation</strong>
+                                    `Impersonator.As(principal)` returns a per-caller handle sharing the rate-limit budget. Boot-time `BindTool` scope subset check aborts on missing permission.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Multi-LLM Abstraction -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="bg-slate-800 text-emerald-400 p-2 rounded-lg text-xl">🧠</span>
+                            <h3 class="text-xl font-bold text-white">Multi-LLM Abstraction</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-emerald-500 mr-2 mt-1">&#x25B8;</span>
+                                <div>
+                                    <strong class="text-white block">Provider-Agnostic Client</strong>
+                                    Unified `Client` / `StreamingClient` for Gemini, OpenAI, Anthropic, LiteLLM. Per-provider streaming idle watchdog (OpenAI 30s, Anthropic 60s, Gemini 90s).
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-500 mr-2 mt-1">&#x25B8;</span>
+                                <div>
+                                    <strong class="text-white block">Reliability Layer</strong>
+                                    Retry with exponential backoff + jitter, gobreaker circuit breaker, failover chains, shadow mode, per-job CostTracker.
                                 </div>
                             </li>
                         </ul>
@@ -317,7 +366,7 @@
                 datasets: [
                     {
                         label: 'AgentGo',
-                        data: [10, 10, 9, 9, 7],
+                        data: [10, 10, 10, 9, 8],
                         backgroundColor: 'rgba(16, 185, 129, 0.2)', // Emerald
                         borderColor: 'rgba(16, 185, 129, 1)',
                         pointBackgroundColor: 'rgba(16, 185, 129, 1)',
@@ -451,21 +500,42 @@
                     feature: "State Persistence",
                     openclaw: "SQLite (Local-first)<br><span class='text-xs text-slate-500'>Integrated session & history storage</span>",
                     nanoclaw: "In-memory or KV Store<br><span class='text-xs text-slate-500'>Often ephemeral</span>",
-                    agentgo: "SQLite (Local) or PostgreSQL (K8s)<br><span class='text-xs text-emerald-600 font-medium'>Scales seamlessly from single-server to HA clusters</span>"
+                    agentgo: "Unified DB: SQLite or PostgreSQL<br><span class='text-xs text-emerald-600 font-medium'>Single platform_db (instances, messages, jobs, durable, cron) — scales single-server → HA</span>"
                 },
                 {
                     category: "Execution",
                     feature: "Workflow Definition",
                     openclaw: "Markdown-based Memory<br><span class='text-xs text-slate-500'>Human-readable logs and diaries</span>",
                     nanoclaw: "State Machines (JSON/TS)<br><span class='text-xs text-slate-500'>Often rigid</span>",
-                    agentgo: "Declarative YAML (Schema-First)<br><span class='text-xs text-emerald-600 font-medium'>Supports loops, foreach, branch_only, return</span>"
+                    agentgo: "Declarative YAML (Schema-First) + Packs<br><span class='text-xs text-emerald-600 font-medium'>loops, foreach, parallel, branch_only, return, dynamic supervisor; SIGHUP hot-reload</span>"
                 },
                 {
                     category: "Execution",
                     feature: "Multi-Agent Coordination",
                     openclaw: "Hub-and-Spoke Router<br><span class='text-xs text-slate-500'>Unified message normalization</span>",
                     nanoclaw: "Direct API calls / Webhooks",
-                    agentgo: "Subagent Depth Tracking & Supervisor<br><span class='text-xs text-emerald-600 font-medium'>Native parallel delegation</span>"
+                    agentgo: "Subagents + Handoff + Durable<br><span class='text-xs text-emerald-600 font-medium'>Isolated subagents (explorer/coder/researcher/planner), in-session handoff (≤3 hops), persistent durable instances</span>"
+                },
+                {
+                    category: "Integrations",
+                    feature: "Outbound Integrations",
+                    openclaw: "Per-channel adapters<br><span class='text-xs text-slate-500'>Slack/Telegram/WhatsApp via gateway</span>",
+                    nanoclaw: "Direct fetch() / SDK<br><span class='text-xs text-slate-500'>Inline secrets, ad-hoc auth</span>",
+                    agentgo: "Connector Registry<br><span class='text-xs text-emerald-600 font-medium'>github / postgres / generic_rest built-ins; T1/T2/T3 authoring tiers; per-principal impersonation; OpenAPI codegen</span>"
+                },
+                {
+                    category: "Integrations",
+                    feature: "Secret Management",
+                    openclaw: "Local env / config files",
+                    nanoclaw: "Vercel env vars",
+                    agentgo: "Pluggable SecretStore<br><span class='text-xs text-emerald-600 font-medium'>env / file (fsnotify) / Vault / AWS-SM / GCP-SM via build tags; double-buffered rotation drains in-flight calls</span>"
+                },
+                {
+                    category: "Integrations",
+                    feature: "Channel Adapters",
+                    openclaw: "First-party (WhatsApp, Telegram, iMessage)",
+                    nanoclaw: "Custom HTTP webhooks",
+                    agentgo: "Slack + Discord (built-in)<br><span class='text-xs text-emerald-600 font-medium'>HMAC-SHA256 + Block Kit (Slack); Ed25519 + deferred ack (Discord); per-instance busy flag prevents HOL blocking</span>"
                 }
             ];
 

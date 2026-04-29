@@ -373,23 +373,35 @@
                         <ul class="space-y-4 text-text-secondary">
                             <li class="flex items-start">
                                 <i class="fas fa-microchip text-accent-teal mt-1 mr-3"></i>
-                                <span><strong class="text-text-primary">Core Architecture:</strong> Designed a concurrent, type-safe platform replacing heavy Python runtimes with a native Worker Pool Scheduler for high-throughput, non-blocking agent execution.</span>
+                                <span><strong class="text-text-primary">Core Architecture:</strong> Designed a concurrent, type-safe platform replacing heavy Python runtimes with a native goroutine Worker Pool Scheduler for high-throughput, non-blocking agent execution and parallel tool dispatch.</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-cogs text-accent-teal mt-1 mr-3"></i>
-                                <span><strong class="text-text-primary">Modular Engines:</strong> Built unified Agent and Workflow Engines to orchestrate complex, multi-step tasks including background monitoring, parallel execution, and approval workflows.</span>
+                                <span><strong class="text-text-primary">Modular Engines:</strong> Built unified Agent, Workflow, and Durable Instance engines with cron/webhook/poll triggers, mailbox messaging, approval flows, and self-extension via runtime artifacts.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-brain text-accent-teal mt-1 mr-3"></i>
+                                <span><strong class="text-text-primary">Multi-LLM Abstraction:</strong> Unified provider layer for Gemini, OpenAI, Anthropic, and LiteLLM proxy with retry, circuit breaker, failover chains, and per-provider streaming idle watchdog.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-plug text-accent-teal mt-1 mr-3"></i>
+                                <span><strong class="text-text-primary">Integrations & Connectors:</strong> Config-driven outbound integrations with hot-reloadable secret backends (env, file, Vault, AWS Secrets Manager, GCP Secret Manager) and per-principal impersonation.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-sitemap text-accent-teal mt-1 mr-3"></i>
+                                <span><strong class="text-text-primary">Multi-Agent Coordination:</strong> Subagent isolation (explorer/coder/researcher/planner), in-session agent handoff up to 3 hops, dynamic supervisor pattern with event-driven planning.</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-server text-accent-teal mt-1 mr-3"></i>
-                                <span><strong class="text-text-primary">Infrastructure:</strong> Engineered ultra-lightweight containers with Hot-Reloadable Configurations, allowing dynamic updates without downtime.</span>
+                                <span><strong class="text-text-primary">Infrastructure:</strong> Single ~30MB binary or modular Compose stack (AgentGo + Postgres + Prometheus + Grafana + Loki). SIGHUP hot-reload across all configs.</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-network-wired text-accent-teal mt-1 mr-3"></i>
-                                <span><strong class="text-text-primary">Interface Layer:</strong> Implemented robust HTTP and CLI interfaces integrating a stateful Chat Service with an extensible Tool Registry.</span>
+                                <span><strong class="text-text-primary">Interface Layer:</strong> HTTP API, CLI REPL with SSE streaming, Slack/Discord channel adapters, and a React + TypeScript Web Console for chat, workflows, durable agents, and schedules.</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-chart-bar text-accent-teal mt-1 mr-3"></i>
-                                <span><strong class="text-text-primary">Production Ops:</strong> Delivered full-stack observability with structured logging, custom Prometheus Metrics, and pre-provisioned Grafana Dashboards.</span>
+                                <span><strong class="text-text-primary">Production Ops:</strong> 130+ Prometheus metrics, structured JSONL logging via Loki, pre-provisioned Grafana dashboards, and audit-trail decorator with sub-millisecond overhead.</span>
                             </li>
                         </ul>
                         <div class="mt-10 flex flex-wrap gap-4">
@@ -408,7 +420,7 @@
                     <div data-aos="fade-left">
                          <div class="relative group">
                             <div class="absolute -inset-1 bg-gradient-to-r from-accent-cyan to-accent-teal rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                            <img src="assets/images/agentgo-arch2.png" alt="AgentGo Architecture" class="relative rounded-lg shadow-2xl border border-accent-cyan/20 w-full">
+                            <img src="assets/images/agentgo-arch3.png" alt="AgentGo Architecture" class="relative rounded-lg shadow-2xl border border-accent-cyan/20 w-full">
                         </div>
                     </div>
                 </div>
@@ -752,7 +764,7 @@
                 </div>
 
                 <div class="text-text-secondary text-sm">
-                    <p>&copy; 2025 Cognition Forge. All rights reserved.</p>
+                    <p>&copy; 2026 Cognition Forge. All rights reserved.</p>
                     <p class="mt-1">www.cognition-forge.com</p>
                 </div>
 
