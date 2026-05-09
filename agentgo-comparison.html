@@ -73,7 +73,7 @@
         <header class="text-center max-w-3xl mx-auto mt-8">
             <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">Scaling Agentic AI in Enterprise</h1>
             <p class="text-lg text-slate-600 leading-relaxed">
-                Evaluating the transition from prototype to production. This report compares the local-first hub architecture of (<strong class="text-violet-600">OpenClaw</strong>), edge-native JS runners (<strong class="text-amber-600">NanoClaw</strong>), and the compiled, highly-secure architecture of <strong class="text-emerald-600">AgentGo</strong>.
+                Evaluating the transition from prototype to production. This report compares the local-first hub architecture of (<strong class="text-violet-600">OpenClaw</strong>), edge-native JS runners (<strong class="text-amber-600">NanoClaw</strong>), and the compiled, multi-agent-native architecture of <strong class="text-emerald-600">AgentGo</strong> — capability cards, typed peer calls, declarative teams, end-to-end W3C tracing.
             </p>
         </header>
 
@@ -121,9 +121,10 @@
                         <span class="text-2xl">🚀</span>
                     </div>
                     <p class="text-sm text-emerald-600 font-bold mb-2">The Production Orchestrator</p>
-                    <p class="text-slate-600 text-sm mb-4">Compiled Go binary. Built for massive concurrency, strict container security, and seamless scale from single-server SQLite to K8s-native PostgreSQL.</p>
+                    <p class="text-slate-600 text-sm mb-4">Compiled Go binary. Built for massive concurrency, strict container security, typed multi-agent collaboration, and seamless scale from single-server SQLite to K8s-native PostgreSQL.</p>
                     <ul class="text-sm text-slate-700 space-y-2 font-medium">
                         <li>&#x2713; Goroutines & Worker Pool Scheduler</li>
+                        <li>&#x2713; Typed A2A Protocol + Declarative Teams</li>
                         <li>&#x2713; SQLite (Local) & PostgreSQL (K8s HA)</li>
                         <li>&#x2713; Sandboxed Container Security</li>
                     </ul>
@@ -343,6 +344,68 @@
                         </ul>
                     </div>
 
+                    <!-- A2A Peer Protocol -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="bg-slate-800 text-emerald-400 p-2 rounded-lg text-xl">🔗</span>
+                            <h3 class="text-xl font-bold text-white">A2A Peer Protocol</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-emerald-500 mr-2 mt-1">&#x25B8;</span>
+                                <div>
+                                    <strong class="text-white block">Capability Cards</strong>
+                                    YAML <code>capabilities</code> block declares typed intents (semver, JSON-Schema inputs/outputs), data classification, ACL matchers, and rate limits. Hot-reloaded via <code>atomic.Pointer</code> validate-then-swap; synthetic fallback preserves back-compat.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-500 mr-2 mt-1">&#x25B8;</span>
+                                <div>
+                                    <strong class="text-white block"><code>call_agent</code> 8-Step Lifecycle</strong>
+                                    Lookup → input schema → ACL → quota → idempotency → W3C traceparent → principal binding → dispatch → output schema. SQL-backed idempotency cache + span recorder; cost rolls up to root caller.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-500 mr-2 mt-1">&#x25B8;</span>
+                                <div>
+                                    <strong class="text-white block">Discovery Surface</strong>
+                                    <code>discover_agents</code>/<code>route_intent</code> LLM tools, <code>/v1/catalog/*</code> HTTP, per-intent OpenAPI 3.1, and read-only <code>/.well-known/agent-card.json</code>.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Declarative Teams -->
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="bg-slate-800 text-emerald-400 p-2 rounded-lg text-xl">👥</span>
+                            <h3 class="text-xl font-bold text-white">Declarative Teams</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-emerald-500 mr-2 mt-1">&#x25B8;</span>
+                                <div>
+                                    <strong class="text-white block">Four Coordination Protocols</strong>
+                                    <code>planner-workers</code> + <code>pipeline</code> default-on; <code>contract-net</code> + <code>swarm</code> behind feature flags. Coordinator implements <code>a2a.Dispatcher</code> so <code>target=team:&lt;id&gt;</code> rolls up cost / trace / ACL / quota symmetrically.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-500 mr-2 mt-1">&#x25B8;</span>
+                                <div>
+                                    <strong class="text-white block">Scoped State + Atomic Claims</strong>
+                                    Shared blackboard via <code>ScopedStore</code> (instance / session / team / workflow scopes, OCC versioning, dual-dialect SQL). <code>TodoClaimStore</code> two-phase atomic claim with TTL-based steal so concurrent peers converge on exactly one winner per task.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-500 mr-2 mt-1">&#x25B8;</span>
+                                <div>
+                                    <strong class="text-white block">Role-Failure Policy</strong>
+                                    Manifest-level <code>skip</code> / <code>replace</code> / <code>abort</code>; per-role <code>fallback_agents</code>; cost cap and wallclock cap enforced between stages.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -514,7 +577,21 @@
                     feature: "Multi-Agent Coordination",
                     openclaw: "Hub-and-Spoke Router<br><span class='text-xs text-slate-500'>Unified message normalization</span>",
                     nanoclaw: "Direct API calls / Webhooks",
-                    agentgo: "Subagents + Handoff + Durable<br><span class='text-xs text-emerald-600 font-medium'>Isolated subagents (explorer/coder/researcher/planner), in-session handoff (≤3 hops), persistent durable instances</span>"
+                    agentgo: "Typed A2A Protocol + Teams<br><span class='text-xs text-emerald-600 font-medium'>Capability cards (JSON-Schema I/O, semver, ACL); <code>call_agent</code> 8-step lifecycle; planner-workers + pipeline default-on, contract-net + swarm flag-gated; subagents + 3-hop handoff retained</span>"
+                },
+                {
+                    category: "Execution",
+                    feature: "Capability Discovery",
+                    openclaw: "Static config / hardcoded IDs",
+                    nanoclaw: "Static routes / config",
+                    agentgo: "Capability Card Registry<br><span class='text-xs text-emerald-600 font-medium'>Hot-reloaded <code>atomic.Pointer</code> snapshot; <code>discover_agents</code>/<code>route_intent</code> LLM tools; embedding-ranked candidates (mock-sha256 / Gemini); <code>/.well-known/agent-card.json</code> + per-intent OpenAPI</span>"
+                },
+                {
+                    category: "Security",
+                    feature: "Cross-Agent ACL & Quotas",
+                    openclaw: "Channel-level auth only",
+                    nanoclaw: "Caller's API auth",
+                    agentgo: "Principal-derived ACL + Token Buckets<br><span class='text-xs text-emerald-600 font-medium'>Caller principal derived from execution stack (not user input); matchers (<code>agent:*</code>, <code>team:*/*</code>, <code>principal:tenant/*</code>); per-target + per-caller token-bucket quotas; SQL idempotency cache</span>"
                 },
                 {
                     category: "Integrations",

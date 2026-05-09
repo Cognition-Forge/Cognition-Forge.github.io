@@ -389,7 +389,11 @@
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-sitemap text-accent-teal mt-1 mr-3"></i>
-                                <span><strong class="text-text-primary">Multi-Agent Coordination:</strong> Subagent isolation (explorer/coder/researcher/planner), in-session agent handoff up to 3 hops, dynamic supervisor pattern with event-driven planning.</span>
+                                <span><strong class="text-text-primary">Multi-Agent Collaboration:</strong> Typed peer protocol with capability cards (semver, JSON-Schema I/O, ACL matchers), <code>call_agent</code> 8-step lifecycle (schema → ACL → token-bucket quota → idempotency → W3C traceparent → principal → dispatch → output validate), and declarative teams (planner-workers + pipeline default-on; contract-net + swarm flag-gated). Cross-agent span tree with cost roll-up to the root caller.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-search text-accent-teal mt-1 mr-3"></i>
+                                <span><strong class="text-text-primary">Discovery & Routing:</strong> Hot-reloaded capability registry with <code>discover_agents</code>/<code>route_intent</code> LLM tools, embedding-ranked candidates (mock-sha256 + Gemini backends), per-intent OpenAPI generation, and <code>/.well-known/agent-card.json</code>. Subagent isolation (explorer/coder/researcher/planner) and 3-hop handoff remain for in-session coordination.</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-server text-accent-teal mt-1 mr-3"></i>

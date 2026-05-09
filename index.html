@@ -319,7 +319,7 @@
                     </h1>
 
                     <p class="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="200">
-                        Define agents in YAML. Orchestrate workflows. Stream responses. Ship a single binary. AgentGo brings compiled-language performance to agentic AI.
+                        Define agents in YAML. Discover peers via capability cards. Compose teams. Stream responses. Ship a single binary. AgentGo brings compiled-language performance and typed multi-agent collaboration to agentic AI.
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6" data-aos="fade-up" data-aos-delay="300">
@@ -535,11 +535,12 @@
                             <i class="fas fa-chart-bar text-accent-cyan text-lg"></i>
                         </div>
                         <h3 class="text-lg font-semibold mb-3">Observability</h3>
-                        <p class="text-text-secondary text-sm mb-4">50+ Prometheus metrics with pre-built Grafana dashboards. Structured JSON logging, Loki integration, and JSONL audit trails for every tool call.</p>
+                        <p class="text-text-secondary text-sm mb-4">130+ Prometheus metrics with pre-built Grafana dashboards. Structured JSON logging via Loki, JSONL audit trails per tool call, and a W3C-conformant cross-agent span tree (<code>/v1/traces/{id}</code>) with cost roll-up to the root caller.</p>
                         <div class="flex flex-wrap gap-1">
                             <span class="tech-tag text-xs">Prometheus</span>
                             <span class="tech-tag text-xs">Grafana</span>
                             <span class="tech-tag text-xs">Loki</span>
+                            <span class="tech-tag text-xs">W3C Trace</span>
                         </div>
                     </div>
 
@@ -572,18 +573,20 @@
                         </div>
                     </div>
 
-                    <!-- Feature 11: Subagents -->
+                    <!-- Feature 11: Multi-Agent Collaboration -->
                     <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
                         <div class="feature-icon">
                             <i class="fas fa-sitemap text-accent-cyan text-lg"></i>
                         </div>
-                        <h3 class="text-lg font-semibold mb-3">Subagents & Handoff</h3>
-                        <p class="text-text-secondary text-sm mb-4">Spawn isolated child agents for parallel research, coding, or exploration. Type-defined subagents with their own tool sets, optional shared state, and pack-local resolution. In-session agent handoff (up to 3 hops) for multi-agent conversations.</p>
+                        <h3 class="text-lg font-semibold mb-3">Multi-Agent Collaboration</h3>
+                        <p class="text-text-secondary text-sm mb-4">Capability cards expose typed intents, JSON-Schema I/O, and ACL matchers. Peers discover each other via <code>discover_agents</code>/<code>route_intent</code> and call <code>call_agent</code> with W3C trace propagation, idempotency, per-target/per-caller token-bucket quotas, and end-to-end cost roll-up. Declarative teams compose planner-workers and pipeline protocols (contract-net + swarm flag-gated); subagents and 3-hop handoff remain for in-session coordination.</p>
                         <div class="flex flex-wrap gap-1">
-                            <span class="tech-tag text-xs">Explorer</span>
-                            <span class="tech-tag text-xs">Coder</span>
-                            <span class="tech-tag text-xs">Researcher</span>
-                            <span class="tech-tag text-xs">Planner</span>
+                            <span class="tech-tag text-xs">Capability Cards</span>
+                            <span class="tech-tag text-xs">A2A Protocol</span>
+                            <span class="tech-tag text-xs">Teams</span>
+                            <span class="tech-tag text-xs">W3C Trace</span>
+                            <span class="tech-tag text-xs">ACL + Quota</span>
+                            <span class="tech-tag text-xs">Subagents</span>
                             <span class="tech-tag text-xs">Handoff</span>
                         </div>
                     </div>
